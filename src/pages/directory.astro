@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.astro';
+---
+<Base title="Stakeholder Directory — DAF Commons">
+    <div class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="huge accent" data-content="directory_hero_heading">Stakeholder Directory</h1>
+                    <p class="body-large hero-subtitle" data-content="directory_hero_subtitle">
+                        The yellow pages for Donor Advised Funds. Your guide to the ecosystem of organizations supporting impact capital deployment.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <SearchBar
+                    id="searchInput"
+                    placeholder="Search organizations..."
+                    placeholderKey="directory_search_placeholder"
+                    onInput="searchDirectory()"
+                />
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterDirectory('all')" data-content="directory_filter_all">All Organizations</button>
+                    <button class="filter-btn" onclick="filterDirectory('DAF Sponsor')" data-content="directory_filter_sponsor">Sponsors</button>
+                    <button class="filter-btn" onclick="filterDirectory('Impact Investment Advisor')" data-content="directory_filter_advisor">Advisors</button>
+                    <button class="filter-btn" onclick="filterDirectory('Investment Intermediary')" data-content="directory_filter_intermediary">Intermediaries</button>
+                    <button class="filter-btn" onclick="filterDirectory('Investment Vehicle')" data-content="directory_filter_fund">Funds</button>
+                    <button class="filter-btn" onclick="filterDirectory('Technology Platform')" data-content="directory_filter_technology">Technology</button>
+                </div>
+                <div class="body mb-large" id="resultsCount"></div>
+                <div class="directory-grid" id="directoryGrid"></div>
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-title" data-content="directory_no_results_heading">No Results</div>
+                    <div class="no-results-text" data-content="directory_no_results_text">Try adjusting your search or filters</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script is:inline src="/scripts/directory.js"></script>
+</Base>

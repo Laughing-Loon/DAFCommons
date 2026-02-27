@@ -1,17 +1,131 @@
 ---
-
+import Base from '../layouts/Base.astro';
 ---
+<Base title="DAF Commons — Collective Infrastructure for Impact">
+    <div class="page">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content scroll-animate">
+                    <h1 class="massive">
+                        <span data-content="home_hero_heading">DAF COMMONS</span><span class="asterisk">*</span>
+                    </h1>
+                    <p class="body-large hero-subtitle" data-content="home_hero_subtitle">
+                        Building collective infrastructure to unlock $50B+ in impact investments from the donor-advised fund ecosystem
+                    </p>
+                </div>
+            </div>
+        </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+        <!-- How You Can Help -->
+        <section class="section-small">
+            <div class="container">
+                <h2 class="large mb-large scroll-animate" data-content="home_cta_heading">
+                    How you can help…
+                </h2>
+                <div class="cta-grid">
+                    <div class="cta-card scroll-animate">
+                        <h3 class="medium" data-content="home_cta_email_heading">Join the mailing list</h3>
+                        <p class="body form-description" data-content="home_cta_email_description">
+                            No spam. Just occasional updates on what we're learning, what we're reading, and what this community is becoming.
+                        </p>
+                        <form id="emailSignupForm" class="form-container">
+                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Your email" required>
+                            <button type="submit" class="btn-primary">Join Us</button>
+                            <div id="emailSignupMessage" class="message"></div>
+                        </form>
+                    </div>
+                    <div class="cta-card scroll-animate">
+                        <h3 class="medium" data-content="home_cta_survey_heading">If you have a DAF, take our survey</h3>
+                        <p class="body form-intro" data-content="home_cta_survey_intro">We want to know:</p>
+                        <ul class="clean-list">
+                            <li data-content="home_cta_survey_item_1">How you're using it</li>
+                            <li data-content="home_cta_survey_item_2">What's confusing</li>
+                            <li data-content="home_cta_survey_item_3">What's possible</li>
+                            <li data-content="home_cta_survey_item_4">Whether you even want a community like this (totally fair if you don't)</li>
+                        </ul>
+                        <a href="https://forms.gle/JgSMCAXpyBrmsxG1A" target="_blank" class="button btn-secondary">Take the Survey</a>
+                    </div>
+                    <div class="cta-card scroll-animate">
+                        <h3 class="medium" style="margin-bottom: clamp(16px, 3vw, 24px);" data-content="home_cta_learn_heading">Not sure what this is about?</h3>
+                        <p class="body" style="opacity: 0.8; margin: 0; margin-bottom: clamp(16px, 3vw, 24px);" data-content="home_cta_learn_description">
+                            Scroll down to see the problem we're trying to solve — or explore our resources and directory to learn what's possible.
+                        </p>
+                        <button id="learnMoreBtn" class="button btn-outline">Learn More ↓</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Intro -->
+        <section class="section-small" id="problemSection">
+            <div class="container">
+                <div class="scroll-animate" style="max-width: 1000px;">
+                    <h2 class="large accent" style="margin-bottom: clamp(32px, 5vw, 48px);" data-content="home_problem_intro_heading">The Problem:</h2>
+                    <p class="body-large" data-content="home_problem_intro_text">
+                        DAF holders, like us & maybe you, steward $326 billion in the U.S.. And with 25% of philanthropic capital flowing to DAFs from the Great Wealth Transfer, that is likely to grow exponentially over the next decade to perhaps $4.5 trillion. Yet the majority of DAF holders capital is invested conventionally, not maliciously, but without impact alignment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section class="section-small">
+            <div class="container">
+                <div class="scroll-animate" style="max-width: 1000px;">
+                    <h2 class="large accent" style="margin-bottom: clamp(32px, 5vw, 48px);" data-content="home_solution_heading">The Solution:</h2>
+                    <p class="body-large" data-content="home_solution_text">
+                        DAF Commons is building shared infrastructure for the DAF ecosystem — a peer community, education hub, and stakeholder directory that connects holders, advisors, and sponsors to unlock collective impact.
+                    </p>
+                    <p class="body-large" style="margin-top: clamp(24px, 4vw, 40px);" data-content="home_solution_text_2">
+                        DAF Commons is a community for DAF holders who want to…
+                    </p>
+                    <ul class="solution-list" style="margin-top: clamp(16px, 3vw, 24px); list-style: none; padding: 0;">
+                        <li class="body-large" style="padding: clamp(8px, 1.5vw, 12px) 0; opacity: 0.8;" data-content="home_solution_item_1">Use our DAFs more effectively</li>
+                        <li class="body-large" style="padding: clamp(8px, 1.5vw, 12px) 0; opacity: 0.8;" data-content="home_solution_item_2">Invest our money more intentionally</li>
+                        <li class="body-large" style="padding: clamp(8px, 1.5vw, 12px) 0; opacity: 0.8;" data-content="home_solution_item_3">Learn what's possible, collectively</li>
+                        <li class="body-large" style="padding: clamp(8px, 1.5vw, 12px) 0; opacity: 0.8;" data-content="home_solution_item_4">Compare notes with others who also have DAFs</li>
+                        <li class="body-large" style="padding: clamp(8px, 1.5vw, 12px) 0; opacity: 0.8;" data-content="home_solution_item_5">And eventually, nudge the whole system toward greater good</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Pillars -->
+        <section class="section">
+            <div class="container">
+                <h2 class="large accent" style="margin-bottom: clamp(32px, 5vw, 48px);" data-content="home_features_heading">Three Pillars</h2>
+                <p class="body-large" style="max-width: 1000px; margin-bottom: clamp(48px, 8vw, 96px);" data-content="home_features_text">
+                    DAF Commons is organized around three interconnected pillars — each designed to address a core gap in the DAF ecosystem.
+                </p>
+                <div class="features-grid">
+                    <a href="/community" class="feature-card scroll-animate" style="text-decoration: none; color: inherit;">
+                        <h3 class="feature-title" data-content="home_features_1_title">Network & Community</h3>
+                        <p class="feature-description" data-content="home_features_1_description">
+                            Digital forums, WhatsApp coordination, peer mentorship, and events connecting DAF holders and advisors
+                        </p>
+                    </a>
+                    <a href="/education" class="feature-card scroll-animate" style="text-decoration: none; color: inherit;">
+                        <h3 class="feature-title" data-content="home_features_2_title">Education Hub</h3>
+                        <p class="feature-description" data-content="home_features_2_description">
+                            Library of collective intelligence with guides, templates, case studies, and research on impact investing through DAFs
+                        </p>
+                    </a>
+                    <a href="/directory" class="feature-card scroll-animate" style="text-decoration: none; color: inherit;">
+                        <h3 class="feature-title" data-content="home_features_3_title">Stakeholder Directory</h3>
+                        <p class="feature-description" data-content="home_features_3_description">
+                            Yellow pages for the DAF ecosystem—searchable directory of sponsors, advisors, intermediaries, and investment vehicles
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script is:inline src="/scripts/signup.js"></script>
+    <script is:inline>
+        document.getElementById('learnMoreBtn')?.addEventListener('click', function() {
+            document.getElementById('problemSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    </script>
+</Base>

@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.astro';
+---
+<Base title="Education Hub — DAF Commons">
+    <div class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="huge accent" data-content="education_hero_heading">Education Hub</h1>
+                    <p class="body-large hero-subtitle" data-content="education_hero_subtitle">
+                        A giant library of collective intelligence. Articles, talks, and papers on the DAF landscape written by practitioners.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <SearchBar
+                    id="educationSearchInput"
+                    placeholder="Search articles, guides, templates..."
+                    placeholderKey="education_search_placeholder"
+                    onInput="searchEducation()"
+                />
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterResources('all')" data-content="education_filter_all">All Resources</button>
+                    <button class="filter-btn" onclick="filterResources('guide')" data-content="education_filter_guide">Guides</button>
+                    <button class="filter-btn" onclick="filterResources('template')" data-content="education_filter_template">Templates</button>
+                    <button class="filter-btn" onclick="filterResources('tool')" data-content="education_filter_tool">Tools</button>
+                    <button class="filter-btn" onclick="filterResources('case-study')" data-content="education_filter_casestudy">Case Studies</button>
+                </div>
+                <div id="resourcesList"></div>
+                <div class="no-results" id="educationNoResults" style="display: none;">
+                    <div class="no-results-title" data-content="education_no_results_heading">No Results</div>
+                    <div class="no-results-text" data-content="education_no_results_text">Try adjusting your search or filters</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script is:inline src="/scripts/education.js"></script>
+</Base>

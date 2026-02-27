@@ -1,0 +1,57 @@
+---
+const currentPath = Astro.url.pathname;
+const links = [
+    { href: '/', label: 'Home', key: 'nav_home' },
+    { href: '/community', label: 'Community', key: 'nav_community' },
+    { href: '/education', label: 'Education', key: 'nav_education' },
+    { href: '/directory', label: 'Directory', key: 'nav_directory' },
+    { href: '/about', label: 'About', key: 'nav_about' },
+];
+---
+<nav>
+    <div class="container">
+        <a href="/" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="8" fill="#C2632A"/>
+                    <circle cx="60" cy="20" r="6" fill="#0A0A0A"/>
+                    <circle cx="95" cy="40" r="6" fill="#0A0A0A"/>
+                    <circle cx="95" cy="80" r="6" fill="#0A0A0A"/>
+                    <circle cx="60" cy="100" r="6" fill="#0A0A0A"/>
+                    <circle cx="25" cy="80" r="6" fill="#0A0A0A"/>
+                    <circle cx="25" cy="40" r="6" fill="#0A0A0A"/>
+                    <line x1="60" y1="60" x2="60" y2="20" stroke="#0A0A0A" stroke-width="2"/>
+                    <line x1="60" y1="60" x2="95" y2="40" stroke="#0A0A0A" stroke-width="2"/>
+                    <line x1="60" y1="60" x2="95" y2="80" stroke="#0A0A0A" stroke-width="2"/>
+                    <line x1="60" y1="60" x2="60" y2="100" stroke="#0A0A0A" stroke-width="2"/>
+                    <line x1="60" y1="60" x2="25" y2="80" stroke="#0A0A0A" stroke-width="2"/>
+                    <line x1="60" y1="60" x2="25" y2="40" stroke="#0A0A0A" stroke-width="2"/>
+                </svg>
+            </div>
+            <span data-content="nav_logo">DAF COMMONS</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="navList">
+            {links.map(link => (
+                <li>
+                    <a href={link.href}
+                       class={`nav-link ${currentPath === link.href ? 'active' : ''}`}
+                       data-content={link.key}>
+                        {link.label}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</nav>
+
+<script is:inline>
+    document.getElementById('navToggle')?.addEventListener('click', function() {
+        this.classList.toggle('open');
+        document.getElementById('navList')?.classList.toggle('open');
+    });
+</script>

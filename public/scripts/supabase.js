@@ -42,6 +42,13 @@ function loadPageContent(contentData) {
         }
     });
 
+    document.querySelectorAll('[data-href]').forEach(element => {
+        const key = element.getAttribute('data-href');
+        if (contentMap[key] && contentMap[key] !== '#') {
+            element.href = contentMap[key];
+        }
+    });
+
     document.querySelectorAll('[data-placeholder]').forEach(element => {
         const key = element.getAttribute('data-placeholder');
         if (contentMap[key]) element.placeholder = contentMap[key];

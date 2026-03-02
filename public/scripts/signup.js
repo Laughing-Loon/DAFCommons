@@ -13,10 +13,9 @@ document.getElementById('emailSignupForm')?.addEventListener('submit', async fun
     submitButton.textContent = 'Joining...';
 
     try {
-        const { data, error } = await supabaseClient
+        const { error } = await supabaseClient
             .from('email_signups')
-            .insert([{ name: name, email: email, source: 'home_page', status: 'active' }])
-            .select();
+            .insert([{ name: name, email: email, source: 'home_page', status: 'active' }]);
 
         if (error) {
             if (error.code === '23505') {
@@ -55,10 +54,9 @@ document.getElementById('footerSignupForm')?.addEventListener('submit', async fu
     submitButton.textContent = 'Subscribing...';
 
     try {
-        const { data, error } = await supabaseClient
+        const { error } = await supabaseClient
             .from('email_signups')
-            .insert([{ name: '', email: email, source: 'footer', status: 'active' }])
-            .select();
+            .insert([{ name: '', email: email, source: 'footer', status: 'active' }]);
 
         if (error) {
             if (error.code === '23505') {

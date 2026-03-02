@@ -228,7 +228,7 @@ main {
 .hero {
     min-height: 60vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: clamp(80px, 15vw, 200px) 0;
 }
 
@@ -717,6 +717,8 @@ ul.clean-list li::before {
     border-radius: 20px;
     margin-bottom: clamp(20px, 3vw, 24px);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .resource-card:hover {
@@ -1231,16 +1233,45 @@ ul.clean-list li::before {
     margin-bottom: clamp(8px, 1.5vw, 12px);
 }
 
+.team-role {
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
 .team-description {
     font-size: clamp(15px, 1.4vw, 19px);
     line-height: 1.6;
     opacity: 0.8;
 }
 
+.team-linkedin {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text);
+    opacity: 0.4;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    margin-top: clamp(8px, 1.5vw, 12px);
+}
+
+.team-linkedin:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.team-linkedin svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* ===== FOOTER ===== */
 footer {
-    background: var(--text);
-    color: var(--bg);
+    background: var(--bg);
+    color: var(--text);
+    border-top: 3px solid var(--accent);
     padding: clamp(48px, 8vw, 80px) 0 clamp(32px, 5vw, 48px);
 }
 
@@ -1257,6 +1288,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.03em;
     margin-bottom: clamp(16px, 3vw, 24px);
+    color: var(--accent);
 }
 
 .footer-text {
@@ -1275,16 +1307,16 @@ footer {
     padding: clamp(10px, 2vw, 14px) clamp(14px, 2vw, 18px);
     font-family: inherit;
     font-size: clamp(15px, 1.4vw, 19px);
-    border: 1px solid rgba(245, 243, 240, 0.2);
-    background: transparent;
-    color: var(--bg);
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
     border-radius: 100px;
     outline: none;
     transition: border 0.2s ease;
 }
 
 .footer-form input::placeholder {
-    color: var(--bg);
+    color: var(--text);
     opacity: 0.4;
 }
 
@@ -1312,10 +1344,12 @@ footer {
 
 .footer-email {
     font-size: clamp(15px, 1.4vw, 19px);
-    color: var(--bg);
+    color: var(--text);
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.7;
     transition: opacity 0.2s ease;
+    display: block;
+    margin-bottom: clamp(12px, 2vw, 16px);
 }
 
 .footer-email:hover {
@@ -1325,7 +1359,7 @@ footer {
 
 .footer-link {
     font-size: clamp(15px, 1.4vw, 19px);
-    color: var(--bg);
+    color: var(--text);
     text-decoration: none;
     opacity: 0.6;
     transition: opacity 0.2s ease;
@@ -1336,15 +1370,34 @@ footer {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(245, 243, 240, 0.1);
+    border-top: 1px solid var(--border);
     padding-top: clamp(24px, 4vw, 32px);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text);
+    opacity: 0.6;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-social-link:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.footer-social-icon {
+    width: 22px;
+    height: 22px;
+}
+
 .footer-copyright {
     font-size: clamp(15px, 1.4vw, 19px);
+    color: var(--text);
     opacity: 0.4;
 }
 
@@ -1354,11 +1407,11 @@ footer {
 }
 
 #footerMessage.success {
-    color: #8BC48A;
+    color: #2d7a2d;
 }
 
 #footerMessage.error {
-    color: #E88;
+    color: #c0392b;
 }
 
 /* ===== UTILITY ===== */

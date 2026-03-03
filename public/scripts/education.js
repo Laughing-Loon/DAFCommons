@@ -45,13 +45,40 @@ function renderResources() {
         noResults.style.display = 'none';
     }
 
-    listContainer.innerHTML = filtered.map(resource =>
-        '<div class="resource-card scroll-animate">' +
-        '<h3 class="resource-title">' + resource.title + '</h3>' +
-        '<p class="resource-description">' + resource.description + '</p>' +
-        (resource.resource_url ? '<a href="' + resource.resource_url + '" target="_blank" rel="noopener" class="org-link" style="margin-top: auto; padding-top: 16px;">Read More <span class="arrow">→</span></a>' : '') +
-        '</div>'
-    ).join('');
+    listContainer.innerHTML = '';
+    filtered.forEach(resource => {
+        const card = document.createElement('div');
+        card.className = 'resource-card scroll-animate';
+
+        const title = document.createElement('h3');
+        title.className = 'resource-title';
+        title.textContent = resource.title;
+
+        const desc = document.createElement('p');
+        desc.className = 'resource-description';
+        desc.textContent = resource.description;
+
+        card.appendChild(title);
+        card.appendChild(desc);
+
+        if (resource.resource_url) {
+            const link = document.createElement('a');
+            link.className = 'org-link';
+            link.href = resource.resource_url;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.style.marginTop = 'auto';
+            link.style.paddingTop = '16px';
+            link.textContent = 'Read More ';
+            const arrow = document.createElement('span');
+            arrow.className = 'arrow';
+            arrow.textContent = '→';
+            link.appendChild(arrow);
+            card.appendChild(link);
+        }
+
+        listContainer.appendChild(card);
+    });
 
     if (typeof initScrollAnimations === 'function') initScrollAnimations();
 }

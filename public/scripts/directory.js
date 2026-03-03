@@ -84,14 +84,40 @@ function renderDirectory() {
         grid.style.display = 'grid';
     }
 
-    grid.innerHTML = filtered.map(org =>
-        '<div class="org-card scroll-animate">' +
-        '<div class="org-type">' + org.type + '</div>' +
-        '<h3 class="org-name">' + org.name + '</h3>' +
-        '<p class="org-description">' + org.description + '</p>' +
-        '<a href="' + org.website + '" target="_blank" rel="noopener" class="org-link">Visit Website <span class="arrow">→</span></a>' +
-        '</div>'
-    ).join('');
+    grid.innerHTML = '';
+    filtered.forEach(org => {
+        const card = document.createElement('div');
+        card.className = 'org-card scroll-animate';
+
+        const type = document.createElement('div');
+        type.className = 'org-type';
+        type.textContent = org.type;
+
+        const name = document.createElement('h3');
+        name.className = 'org-name';
+        name.textContent = org.name;
+
+        const desc = document.createElement('p');
+        desc.className = 'org-description';
+        desc.textContent = org.description;
+
+        const link = document.createElement('a');
+        link.className = 'org-link';
+        link.href = org.website;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'Visit Website ';
+        const arrow = document.createElement('span');
+        arrow.className = 'arrow';
+        arrow.textContent = '→';
+        link.appendChild(arrow);
+
+        card.appendChild(type);
+        card.appendChild(name);
+        card.appendChild(desc);
+        card.appendChild(link);
+        grid.appendChild(card);
+    });
 
     if (typeof initScrollAnimations === 'function') initScrollAnimations();
 }

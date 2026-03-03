@@ -453,7 +453,7 @@ main {
 .search-input {
     width: 100%;
     max-width: 100%;
-    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px) clamp(56px, 7vw, 72px);
+    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px) clamp(60px, 8vw, 80px);
     font-family: inherit;
     font-size: clamp(15px, 1.4vw, 19px);
     border: none;

@@ -1248,6 +1248,14 @@ ul.clean-list li::before {
     opacity: 0.8;
 }
 
+.team-note {
+    font-size: clamp(11px, 1vw, 13px);
+    line-height: 1.5;
+    opacity: 0.5;
+    font-style: italic;
+    margin-top: clamp(8px, 1.5vw, 12px);
+}
+
 .team-linkedin {
     display: inline-flex;
     align-items: center;

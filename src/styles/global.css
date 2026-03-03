@@ -453,7 +453,7 @@ main {
 .search-input {
     width: 100%;
     max-width: 100%;
-    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px) clamp(56px, 7vw, 72px);
+    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px) clamp(72px, 10vw, 88px);
     font-family: inherit;
     font-size: clamp(15px, 1.4vw, 19px);
     border: none;
@@ -1246,6 +1246,14 @@ ul.clean-list li::before {
     font-size: clamp(15px, 1.4vw, 19px);
     line-height: 1.6;
     opacity: 0.8;
+}
+
+.team-note {
+    font-size: clamp(11px, 1vw, 13px);
+    line-height: 1.5;
+    opacity: 0.5;
+    font-style: italic;
+    margin-top: clamp(8px, 1.5vw, 12px);
 }
 
 .team-linkedin {

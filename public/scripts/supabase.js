@@ -53,6 +53,18 @@ function loadPageContent(contentData) {
         const key = element.getAttribute('data-placeholder');
         if (contentMap[key]) element.placeholder = contentMap[key];
     });
+
+    // Null-state: hide cards where the photo/image has no CMS value
+    // This covers team-card, collaborator-card, or any parent with data-src images
+    document.querySelectorAll('.team-card, .collaborator-card').forEach(card => {
+        const img = card.querySelector('[data-src]');
+        if (img) {
+            const key = img.getAttribute('data-src');
+            if (!contentMap[key] || contentMap[key].trim() === '') {
+                card.style.display = 'none';
+            }
+        }
+    });
 }
 
 // Initialize on every page

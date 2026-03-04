@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -44,5 +45,6 @@ const { title = 'DAF Commons — Collective Infrastructure for Impact' } = Astro
     <script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script is:inline src="/scripts/supabase.js"></script>
     <script is:inline src="/scripts/animations.js"></script>
+    <Analytics />
 </body>
 </html>

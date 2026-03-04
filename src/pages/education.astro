@@ -6,10 +6,10 @@ import SearchBar from '../components/SearchBar.astro';
     <div class="page">
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
+                <div class="hero-content scroll-animate">
                     <h1 class="huge accent" data-content="education_hero_heading">Education Hub</h1>
                     <p class="body-large hero-subtitle" data-content="education_hero_subtitle">
-                        A giant library of collective intelligence. Articles, talks, and papers on the DAF landscape written by practitioners.
+                        Want to dive deeper and learn more? We've got you covered. A giant library of collective intelligence. Articles, talks, and papers on the DAF landscape by practioners and peers.
                     </p>
                 </div>
             </div>
@@ -18,16 +18,15 @@ import SearchBar from '../components/SearchBar.astro';
             <div class="container">
                 <SearchBar
                     id="educationSearchInput"
-                    placeholder="Search articles, guides, templates..."
+                    placeholder="Search resources by keyword..."
                     placeholderKey="education_search_placeholder"
                     onInput="searchEducation()"
                 />
                 <div class="filters">
                     <button class="filter-btn active" onclick="filterResources('all')" data-content="education_filter_all">All Resources</button>
+                    <button class="filter-btn" onclick="filterResources('Article')" data-content="education_filter_article">Articles</button>
                     <button class="filter-btn" onclick="filterResources('guide')" data-content="education_filter_guide">Guides</button>
-                    <button class="filter-btn" onclick="filterResources('template')" data-content="education_filter_template">Templates</button>
                     <button class="filter-btn" onclick="filterResources('tool')" data-content="education_filter_tool">Tools</button>
-                    <button class="filter-btn" onclick="filterResources('case-study')" data-content="education_filter_casestudy">Case Studies</button>
                 </div>
                 <div id="resourcesList"></div>
                 <div class="no-results" id="educationNoResults" style="display: none;">

@@ -1,16 +1,12 @@
 const RESOURCES_FALLBACK = [
-    { type: 'guide', title: 'Getting Started with DAF Impact Investing', description: 'A comprehensive introduction to deploying your donor-advised fund for impact investments, covering basics, strategies, and first steps.', tags: ['Beginner', 'Guide'], keywords: 'impact investing beginner start DAF basics introduction' },
-    { type: 'guide', title: 'Switching DAF Sponsors: A Step-by-Step Guide', description: 'Learn how to evaluate and transition between DAF sponsors, including what to look for and how to minimize disruption.', tags: ['How-To', 'Guide'], keywords: 'sponsor switch transition evaluate move' },
-    { type: 'template', title: 'Investment Policy Statement Template', description: 'Downloadable template for creating your DAF investment policy statement, with guidance on key decision points and customization.', tags: ['Template', 'Advanced'], keywords: 'IPS policy statement investment template document' },
-    { type: 'template', title: 'Due Diligence Checklist for Impact Investments', description: 'Comprehensive checklist covering financial, impact, and operational due diligence for evaluating investment opportunities.', tags: ['Template', 'Due Diligence'], keywords: 'due diligence checklist evaluation assessment' },
-    { type: 'tool', title: 'DAF Sponsor Selection Tool', description: 'Interactive tool to help you identify the right DAF sponsor based on your priorities, investment interests, and fee preferences.', tags: ['Tool', 'Beginner'], keywords: 'sponsor selection choose tool interactive' },
-    { type: 'tool', title: 'Values Alignment Survey', description: 'Clarify your philanthropic values and priorities to guide your impact investing strategy and portfolio construction.', tags: ['Tool', 'Planning'], keywords: 'values alignment survey priorities mission' },
-    { type: 'case-study', title: 'CCJF: Pooling DAF Capital for Climate Justice', description: 'Case study on the Collective Climate Justice Fund model for multi-donor DAF collaboration and impact measurement.', tags: ['Case Study', 'Climate'], keywords: 'CCJF climate justice pooling multi-donor collaborative' },
-    { type: 'case-study', title: 'Sea Forward Fund: Ocean Conservation Through DAFs', description: 'How philanthropic capital is being deployed to ocean health through a multi-donor fund structure.', tags: ['Case Study', 'Environment'], keywords: 'ocean conservation sea forward environment marine' },
-    { type: 'guide', title: 'Understanding Recoverable Grants', description: 'Explore how to use DAF capital for program-related investments and recoverable grants to maximize impact.', tags: ['Guide', 'Advanced'], keywords: 'recoverable grants PRI program-related investment' },
-    { type: 'template', title: 'Gift Acceptance Policy Template', description: 'Sample policies for accepting complex assets into your DAF, including real estate, cryptocurrency, and private equity.', tags: ['Template', 'Complex Assets'], keywords: 'gift acceptance policy crypto real estate assets' },
-    { type: 'guide', title: 'Impact Measurement for DAF Investments', description: 'Frameworks and approaches for measuring social and environmental outcomes from your impact investments.', tags: ['Guide', 'Impact Measurement'], keywords: 'impact measurement outcomes metrics evaluation assessment' },
-    { type: 'tool', title: 'Impact Pledge Framework', description: 'Make and track your commitment to allocate a percentage of DAF capital to impact investments, with accountability tools.', tags: ['Tool', 'Commitment'], keywords: 'pledge commitment accountability tracking goals' }
+    { type: 'Article', title: 'Tapping the Catalytic Capital Potential of Donor Advised Funds', description: 'DAF assets represent an ideal source of catalytic capital — patient, risk-tolerant, concessionary, and flexible — to support impact-driven enterprises that lack access to capital through conventional markets.', tags: null, keywords: 'donor advised fund DAF catalytic capital impact investing patient capital CDFI', resource_url: 'https://greenmoney.com/tapping-the-catalytic-capital-potential-of-donor-advised-funds/' },
+    { type: 'Article', title: 'How to Use Donor-Advised Funds to Make Impact Investments', description: 'Older but still relevant guide explaining how DAF holders can make impact investments, with practical framing around how to work with fund sponsors.', tags: null, keywords: 'donor advised fund DAF impact investing', resource_url: 'https://ssir.org/articles/entry/how_to_use_donor_advised_funds_to_make_impact_investments' },
+    { type: 'Article', title: 'Using Donor Advised Funds to Invest in Early Stage Entrepreneurs', description: 'Older but still relevant article making the case for DAF holders to use their DAF capital for impact investing to fill financing gaps for early-stage social enterprises.', tags: null, keywords: 'donor advised fund DAF impact investing catalytic capital social entrepreneur', resource_url: 'https://ssir.org/articles/entry/using_donor_advised_funds_to_invest_in_early_stage_entrepreneurs#' },
+    { type: 'Article', title: 'Multi-donor Funds Emerge as a Creative Architecture for Collaborative, Catalytic Capital', description: 'Makes the case for multi-donor funds (MDFs) — collaborative vehicles built atop DAFs — as a flexible, fast-moving model for collective impact investing.', tags: null, keywords: 'donor advised fund DAF catalytic capital impact investing collective action multi-donor fund', resource_url: 'https://impactalpha.com/multi-donor-funds-creative-architecture-for-collaborative-catalytic-capital/' },
+    { type: 'guide', title: 'Mobilizing Donor Advised Funds For Impact Investing', description: 'Older but still relevant guide on DAFs + impact investing written specifically for DAF holders, examining different ways DAF capital can be deployed strategically for impact.', tags: null, keywords: 'donor advised fund DAF catalytic capital impact investing collective action loan guarantee pooled fund', resource_url: 'https://missioninvestors.org/sites/default/files/resources/Read%20the%20Full%20Report_1.pdf' },
+    { type: 'guide', title: 'The Independent Report on DAFs', description: 'A transparent, comprehensive analysis of donor-advised funds.', tags: null, keywords: 'donor advised fund DAF sponsor payout account size research', resource_url: 'https://inequality.org/article/the-independent-report-on-dafs/' },
+    { type: 'guide', title: 'The National Study on Donor Advised Funds', description: 'An independent, comprehensive study of donor advised funds.', tags: null, keywords: 'donor advised fund DAF sponsor payout account size research', resource_url: 'https://www.dafresearchcollaborative.org/national-study-dafs' },
+    { type: 'tool', title: 'DAF Stakeholders Report', description: 'An interactive report on the ecosystem of DAF stakeholders, and their incentives.', tags: null, keywords: '', resource_url: 'https://starlinglouis.kumu.io/stakeholders-in-the-daf-landscape' }
 ];
 
 let RESOURCES = [];
@@ -34,7 +30,7 @@ function renderResources() {
         const matchesSearch = educationSearchQuery === '' ||
             r.title.toLowerCase().includes(educationSearchQuery.toLowerCase()) ||
             r.description.toLowerCase().includes(educationSearchQuery.toLowerCase()) ||
-            r.keywords.toLowerCase().includes(educationSearchQuery.toLowerCase());
+            (r.keywords || '').toLowerCase().includes(educationSearchQuery.toLowerCase());
         return matchesFilter && matchesSearch;
     });
 
@@ -49,13 +45,40 @@ function renderResources() {
         noResults.style.display = 'none';
     }
 
-    listContainer.innerHTML = filtered.map(resource =>
-        '<div class="resource-card scroll-animate">' +
-        '<div class="resource-meta">' + resource.tags.map(tag => '<span class="resource-tag">' + tag + '</span>').join('') + '</div>' +
-        '<h3 class="resource-title">' + resource.title + '</h3>' +
-        '<p class="resource-description">' + resource.description + '</p>' +
-        '</div>'
-    ).join('');
+    listContainer.innerHTML = '';
+    filtered.forEach(resource => {
+        const card = document.createElement('div');
+        card.className = 'resource-card scroll-animate';
+
+        const title = document.createElement('h3');
+        title.className = 'resource-title';
+        title.textContent = resource.title;
+
+        const desc = document.createElement('p');
+        desc.className = 'resource-description';
+        desc.textContent = resource.description;
+
+        card.appendChild(title);
+        card.appendChild(desc);
+
+        if (resource.resource_url) {
+            const link = document.createElement('a');
+            link.className = 'org-link';
+            link.href = resource.resource_url;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.style.marginTop = 'auto';
+            link.style.paddingTop = '16px';
+            link.textContent = 'Read More ';
+            const arrow = document.createElement('span');
+            arrow.className = 'arrow';
+            arrow.textContent = '→';
+            link.appendChild(arrow);
+            card.appendChild(link);
+        }
+
+        listContainer.appendChild(card);
+    });
 
     if (typeof initScrollAnimations === 'function') initScrollAnimations();
 }

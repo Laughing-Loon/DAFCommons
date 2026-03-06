@@ -9,7 +9,7 @@ import SearchBar from '../components/SearchBar.astro';
                 <div class="hero-content scroll-animate">
                     <h1 class="huge accent" data-content="directory_hero_heading">Stakeholder Directory</h1>
                     <p class="body-large hero-subtitle" data-content="directory_hero_subtitle">
-                        The yellow pages for Donor Advised Funds. A guide to the ecosystem of DAF stakeholders who can support you in investing your money in more impactful ways
+                        The yellow pages for Donor Advised Funds. An open-source and evolving guide to the ecosystem of DAF stakeholders who can support you in investing your money in more impactful ways.
                     </p>
                 </div>
             </div>
@@ -28,7 +28,8 @@ import SearchBar from '../components/SearchBar.astro';
                     <button class="filter-btn" onclick="filterDirectory('Impact Investment Advisor')" data-content="directory_filter_advisor">Advisors</button>
                     <button class="filter-btn" onclick="filterDirectory('Investment Intermediary')" data-content="directory_filter_intermediary">Intermediaries</button>
                     <button class="filter-btn" onclick="filterDirectory('Investment Vehicle')" data-content="directory_filter_fund">Funds</button>
-                    <button class="filter-btn" onclick="filterDirectory('Technology Platform')" data-content="directory_filter_technology">Technology</button>
+                    <!-- Technology filter hidden — no orgs in directory yet -->
+                    <!-- <button class="filter-btn" onclick="filterDirectory('Technology Platform')" data-content="directory_filter_technology">Technology</button> -->
                 </div>
                 <div class="body mb-large" id="resultsCount"></div>
                 <div class="directory-grid" id="directoryGrid"></div>

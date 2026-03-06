@@ -441,11 +441,11 @@ main {
 
 .search-icon {
     position: absolute;
-    left: clamp(18px, 3vw, 28px);
+    left: clamp(18px, 2vw, 24px);
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     opacity: 0.4;
     pointer-events: none;
 }
@@ -453,7 +453,7 @@ main {
 .search-input {
     width: 100%;
     max-width: 100%;
-    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px) clamp(72px, 10vw, 88px);
+    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px) clamp(56px, 5vw, 64px);
     font-family: inherit;
     font-size: clamp(15px, 1.4vw, 19px);
     border: none;

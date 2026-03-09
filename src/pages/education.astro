@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.astro';
 ---
 <Base title="Education Hub — DAF Commons">
-    <div class="page">
+    <div class="page page-tight-hero">
         <section class="hero">
             <div class="container">
                 <div class="hero-content scroll-animate">
@@ -32,6 +32,9 @@ import SearchBar from '../components/SearchBar.astro';
                 <div class="no-results" id="educationNoResults" style="display: none;">
                     <div class="no-results-title" data-content="education_no_results_heading">No Results</div>
                     <div class="no-results-text" data-content="education_no_results_text">Try adjusting your search or filters</div>
+                </div>
+                <div class="page-footer-cta">
+                    <p><span data-content="education_footer_cta">Have a resource to add to this directory? Send us an email at</span> <a href="mailto:DAFCommons@gmail.com">DAFCommons@gmail.com</a></p>
                 </div>
             </div>
         </section>

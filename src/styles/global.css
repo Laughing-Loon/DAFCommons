@@ -1422,6 +1422,82 @@ footer {
     color: #c0392b;
 }
 
+/* ===== PAGE-SPECIFIC: Education & Directory tighter hero-to-content gap ===== */
+.page-tight-hero .hero {
+    padding-bottom: clamp(32px, 5vw, 64px);
+}
+
+.page-tight-hero .section {
+    padding-top: clamp(16px, 3vw, 32px);
+}
+
+/* ===== PAGE-SPECIFIC: About page equalized section gaps ===== */
+.page-about .hero {
+    padding-bottom: clamp(24px, 4vw, 48px);
+}
+
+.page-about .section {
+    padding-top: clamp(24px, 4vw, 48px);
+}
+
+.page-about .about-text-block {
+    margin-bottom: clamp(48px, 8vw, 80px);
+}
+
+.page-about .rock-overlay {
+    padding: clamp(48px, 8vw, 80px) 0;
+    padding-top: 0;
+}
+
+.page-about .scroll-animate[data-section="faq"] {
+    margin-top: clamp(48px, 8vw, 80px);
+}
+
+.page-about .contact-box {
+    margin-top: clamp(48px, 8vw, 80px);
+}
+
+/* ===== PAGE FOOTER CTA ===== */
+.page-footer-cta {
+    text-align: center;
+    padding: clamp(32px, 5vw, 48px) 0;
+    margin-top: clamp(32px, 5vw, 48px);
+    border-top: 1px solid var(--border);
+}
+
+.page-footer-cta p {
+    font-size: clamp(15px, 1.4vw, 19px);
+    line-height: 1.6;
+    opacity: 0.7;
+}
+
+.page-footer-cta a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.page-footer-cta a:hover {
+    opacity: 0.7;
+}
+
+/* ===== HOME PAGE: Logo replacing asterisk ===== */
+.hero-logo-icon {
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    vertical-align: super;
+    margin-left: 0.15em;
+    position: relative;
+    top: -0.05em;
+}
+
+.hero-logo-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
 /* ===== UTILITY ===== */
 .mt-large { margin-top: clamp(48px, 8vw, 96px); }
 .mb-large { margin-bottom: clamp(48px, 8vw, 96px); }

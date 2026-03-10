@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.astro';
 ---
 <Base title="Stakeholder Directory — DAF Commons">
-    <div class="page">
+    <div class="page page-tight-hero">
         <section class="hero">
             <div class="container">
                 <div class="hero-content scroll-animate">
@@ -36,6 +36,9 @@ import SearchBar from '../components/SearchBar.astro';
                 <div class="no-results" id="noResults" style="display: none;">
                     <div class="no-results-title" data-content="directory_no_results_heading">No Results</div>
                     <div class="no-results-text" data-content="directory_no_results_text">Try adjusting your search or filters</div>
+                </div>
+                <div class="page-footer-cta">
+                    <p><span data-content="directory_footer_cta">Know of an organization who should be on this directory? Send us an email with details at</span> <a href="mailto:DAFCommons@gmail.com">DAFCommons@gmail.com</a></p>
                 </div>
             </div>
         </section>

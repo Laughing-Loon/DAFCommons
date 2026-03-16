@@ -54,11 +54,19 @@ function renderResources() {
         title.className = 'resource-title';
         title.textContent = resource.title;
 
+        card.appendChild(title);
+
+        if (resource.author) {
+            const author = document.createElement('p');
+            author.className = 'resource-author';
+            author.textContent = resource.author;
+            card.appendChild(author);
+        }
+
         const desc = document.createElement('p');
         desc.className = 'resource-description';
         desc.textContent = resource.description;
 
-        card.appendChild(title);
         card.appendChild(desc);
 
         if (resource.resource_url) {

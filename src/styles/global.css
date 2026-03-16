@@ -339,10 +339,10 @@ main {
 }
 
 .feature-title {
-    font-size: clamp(18px, 2.2vw, 28px);
+    font-size: clamp(18px, 2vw, 26px);
     font-weight: 900;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     text-transform: uppercase;
     margin-bottom: clamp(16px, 3vw, 24px);
     word-wrap: break-word;
@@ -750,6 +750,15 @@ ul.clean-list li::before {
     letter-spacing: -0.01em;
     margin-bottom: clamp(12px, 2vw, 16px);
     word-wrap: break-word;
+}
+
+.resource-author {
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    margin-bottom: clamp(12px, 2vw, 16px);
 }
 
 .resource-description {
@@ -1285,7 +1294,7 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: clamp(32px, 5vw, 64px);
     margin-bottom: clamp(48px, 8vw, 64px);
 }

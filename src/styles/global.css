@@ -1524,6 +1524,15 @@ footer {
     --daf-mid: #888880;
 }
 
+/* Override overflow-x: hidden on html/body for chapter pages so position: fixed
+   on the sidebar resolves against the viewport (full height) instead of the
+   html containing block. overflow-x: clip prevents horizontal scroll without
+   creating a new containing block. */
+html.chapter-html,
+html.chapter-html body {
+    overflow-x: clip;
+}
+
 body.daf-chapter .daf-sidebar {
     position: fixed;
     top: 0;

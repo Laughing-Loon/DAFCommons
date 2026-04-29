@@ -1674,7 +1674,7 @@ body.daf-chapter .chapter.orange { background: var(--accent); color: #fff; }
 body.daf-chapter .chapter.warm { background: #EDE8E2; }
 
 body.daf-chapter .eyebrow {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -1746,7 +1746,7 @@ body.daf-chapter .callout {
 }
 
 body.daf-chapter .callout p {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text);
     line-height: 1.6;
@@ -1770,7 +1770,7 @@ body.daf-chapter .callout-orange {
 }
 
 body.daf-chapter .callout-orange p {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--accent);
     line-height: 1.65;
@@ -1780,7 +1780,7 @@ body.daf-chapter .callout-orange p {
 body.daf-chapter .bullet-list { list-style: none; max-width: 580px; margin: 16px 0 20px; }
 
 body.daf-chapter .bullet-list li {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.65;
     color: var(--text-secondary);
     padding: 10px 0;
@@ -1797,7 +1797,7 @@ body.daf-chapter .bullet-list li::before {
     color: var(--accent);
     font-weight: 700;
     flex-shrink: 0;
-    font-size: 11px;
+    font-size: 13px;
     margin-top: 3px;
 }
 
@@ -1837,7 +1837,7 @@ body.daf-chapter .stat-v .u {
 }
 
 body.daf-chapter .stat-lbl {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1846,9 +1846,9 @@ body.daf-chapter .stat-lbl {
     margin-top: 8px;
 }
 
-body.daf-chapter .stat-desc { font-size: 11px; color: var(--daf-mid); line-height: 1.6; }
+body.daf-chapter .stat-desc { font-size: 13px; color: var(--daf-mid); line-height: 1.6; }
 
-body.daf-chapter .stat-source { font-size: 11px; color: rgba(10,10,10,0.3); margin-top: 8px; line-height: 1.5; }
+body.daf-chapter .stat-source { font-size: 13px; color: rgba(10,10,10,0.3); margin-top: 8px; line-height: 1.5; }
 body.daf-chapter .stat-source a { color: rgba(194,99,42,0.5); text-decoration: none; }
 body.daf-chapter .stat-source a:hover { color: var(--accent); }
 
@@ -1876,7 +1876,7 @@ body.daf-chapter .card {
 body.daf-chapter .chapter.orange .card { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
 
 body.daf-chapter .card-tag {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1897,7 +1897,7 @@ body.daf-chapter .card h3 {
 }
 
 body.daf-chapter .chapter.orange .card h3 { color: #fff; }
-body.daf-chapter .card p { font-size: 13px; color: var(--daf-mid); line-height: 1.7; }
+body.daf-chapter .card p { font-size: 15px; color: var(--daf-mid); line-height: 1.7; }
 body.daf-chapter .chapter.orange .card p { color: rgba(255,255,255,0.6); }
 
 body.daf-chapter .card .card-num {
@@ -1918,7 +1918,7 @@ body.daf-chapter .flow-wrap {
 }
 
 body.daf-chapter .flow-title {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1948,7 +1948,7 @@ body.daf-chapter .lc-num {
 }
 
 body.daf-chapter .lc-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1956,7 +1956,7 @@ body.daf-chapter .lc-title {
     color: var(--text);
 }
 
-body.daf-chapter .lc-body { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+body.daf-chapter .lc-body { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 body.daf-chapter .lc-body strong { color: var(--text); font-weight: 700; }
 
 body.daf-chapter .stakeholders {
@@ -1973,7 +1973,7 @@ body.daf-chapter .stakeholders {
 body.daf-chapter .sh-cell { background: #fff; padding: 32px 24px; }
 
 body.daf-chapter .sh-tag {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1982,7 +1982,7 @@ body.daf-chapter .sh-tag {
 }
 
 body.daf-chapter .sh-name {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1991,7 +1991,7 @@ body.daf-chapter .sh-name {
     line-height: 1.1;
 }
 
-body.daf-chapter .sh-desc { font-size: 11px; color: var(--daf-mid); line-height: 1.6; }
+body.daf-chapter .sh-desc { font-size: 13px; color: var(--daf-mid); line-height: 1.6; }
 
 body.daf-chapter .tension-table {
     border-radius: 20px;
@@ -2010,7 +2010,7 @@ body.daf-chapter .tension-table-head {
 
 body.daf-chapter .tt-head-cell {
     padding: 14px 28px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -2029,7 +2029,7 @@ body.daf-chapter .tension-row:last-child { border-bottom: none; }
 
 body.daf-chapter .tension-cell {
     padding: 22px 28px;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.65;
     color: var(--text-secondary);
 }
@@ -2051,7 +2051,7 @@ body.daf-chapter .persist-row {
 body.daf-chapter .persist-row:first-child { border-top: 1px solid var(--border); }
 
 body.daf-chapter .persist-actor {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -2062,7 +2062,7 @@ body.daf-chapter .persist-actor {
 }
 
 body.daf-chapter .persist-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -2070,7 +2070,7 @@ body.daf-chapter .persist-title {
     margin-bottom: 6px;
 }
 
-body.daf-chapter .persist-body { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+body.daf-chapter .persist-body { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.7; }
 body.daf-chapter .persist-body strong { color: #fff; font-weight: 700; }
 
 body.daf-chapter .myth-table {
@@ -2090,7 +2090,7 @@ body.daf-chapter .myth-table-head {
 
 body.daf-chapter .mt-head-cell {
     padding: 14px 28px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -2107,7 +2107,7 @@ body.daf-chapter .myth-row {
 
 body.daf-chapter .myth-row:last-child { border-bottom: none; }
 
-body.daf-chapter .myth-cell { padding: 22px 28px; font-size: 13px; line-height: 1.65; }
+body.daf-chapter .myth-cell { padding: 22px 28px; font-size: 15px; line-height: 1.65; }
 
 body.daf-chapter .myth-cell:first-child {
     border-right: 1px solid var(--border);
@@ -2132,7 +2132,7 @@ body.daf-chapter .pie-wrap {
 }
 
 body.daf-chapter .pie-title {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -2155,8 +2155,8 @@ body.daf-chapter .pie-legend-item {
 
 body.daf-chapter .pie-legend-item:last-child { border-bottom: none; }
 body.daf-chapter .pie-dot { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
-body.daf-chapter .pie-legend-name { font-size: 13px; font-weight: 700; color: var(--text); }
-body.daf-chapter .pie-legend-sub { font-size: 11px; color: var(--daf-mid); margin-top: 2px; font-weight: 400; }
+body.daf-chapter .pie-legend-name { font-size: 15px; font-weight: 700; color: var(--text); }
+body.daf-chapter .pie-legend-sub { font-size: 13px; color: var(--daf-mid); margin-top: 2px; font-weight: 400; }
 body.daf-chapter .pie-legend-pct { font-size: 17px; font-weight: 900; letter-spacing: -0.03em; color: var(--text); }
 
 body.daf-chapter .next-step {
@@ -2187,14 +2187,14 @@ body.daf-chapter .ns-title {
     margin-bottom: 10px;
 }
 
-body.daf-chapter .ns-body { font-size: 13px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
+body.daf-chapter .ns-body { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
 body.daf-chapter .ns-body strong { color: var(--text); font-weight: 700; }
 body.daf-chapter .ns-body a { color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(194,99,42,0.3); }
 
 body.daf-chapter .ns-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
 body.daf-chapter .ns-tool {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -2223,7 +2223,7 @@ body.daf-chapter .cta-box h3 {
 }
 
 body.daf-chapter .cta-box p {
-    font-size: 13px;
+    font-size: 15px;
     color: rgba(245,243,240,0.45);
     line-height: 1.75;
     max-width: 520px;
@@ -2238,7 +2238,7 @@ body.daf-chapter .daf-btn {
     background: var(--accent);
     color: white;
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -2264,7 +2264,7 @@ body.daf-chapter .g-tip {
     border-radius: 12px;
     padding: 14px 18px;
     max-width: 280px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 1.65;
     letter-spacing: 0;
@@ -2279,7 +2279,7 @@ body.daf-chapter .g-tip strong {
     font-weight: 700;
     display: block;
     margin-bottom: 4px;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }

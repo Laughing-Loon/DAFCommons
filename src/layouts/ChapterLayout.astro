@@ -1,0 +1,35 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import '../styles/global.css';
+
+interface Props {
+    title?: string;
+}
+
+const { title = 'What is a DAF? — DAF Commons' } = Astro.props;
+---
+<html lang="en" class="chapter-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content="A complete guide to Donor Advised Funds: what they are, how they work, and how to use them for greater impact.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content="A complete guide to Donor Advised Funds: what they are, how they work, and how to use them for greater impact.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content="A complete guide to Donor Advised Funds: what they are, how they work, and how to use them for greater impact.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="daf-chapter">
+    <slot />
+    <script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script is:inline src="/scripts/supabase.js"></script>
+    <Analytics />
+</body>
+</html>

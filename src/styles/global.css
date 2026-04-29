@@ -1418,16 +1418,24 @@ footer {
     opacity: 0.4;
 }
 
-.footer-daf-link {
-    font-size: clamp(13px, 1.2vw, 15px);
-    font-weight: 600;
+.footer-daf-prompt {
+    font-size: clamp(16px, 1.8vw, 22px);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    opacity: 0.6;
+}
+
+.footer-daf-prompt a {
     color: var(--accent);
     text-decoration: none;
-    opacity: 0.8;
+    font-weight: 600;
+    opacity: 1;
     transition: opacity 0.2s;
 }
 
-.footer-daf-link:hover { opacity: 1; }
+.footer-daf-prompt a:hover { opacity: 0.75; }
 
 #footerMessage {
     font-size: clamp(13px, 1.5vw, 14px);
@@ -1541,7 +1549,8 @@ body.daf-chapter .daf-sidebar {
     position: sticky;
     top: 0;
     height: 100vh;
-    width: 100%;
+    width: var(--daf-sidebar);
+    max-width: var(--daf-sidebar);
     background: #fff;
     border-right: 1px solid var(--border);
     display: flex;
@@ -1549,6 +1558,12 @@ body.daf-chapter .daf-sidebar {
     padding: 40px 28px;
     z-index: 100;
     overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body.daf-chapter .chapter-nav a {
+    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -1589,10 +1604,15 @@ body.daf-chapter .daf-back {
 body.daf-chapter .daf-back:hover { color: var(--text); }
 
 body.daf-chapter .chapter-nav {
+    position: static;
     display: flex;
     flex-direction: column;
     gap: 0;
     flex: 1;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
 }
 
 body.daf-chapter .chapter-nav a {

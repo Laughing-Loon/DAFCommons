@@ -1,29 +1,60 @@
 ---
 import Base from '../layouts/Base.astro';
+// Stories, events: rendered client-side from Supabase by /scripts/dynamic-lists.js
 ---
 <Base title="Community — DAF Commons">
-    <div class="page">
-        <section class="hero">
+    <div class="page community-page">
+
+        <!-- HERO -->
+        <section class="community-hero">
             <div class="container">
                 <div class="hero-content scroll-animate">
-                    <h1 class="huge accent" data-content="community_hero_heading">Network & Community</h1>
-                    <p class="body-large hero-subtitle" data-content="community_hero_subtitle">Coming soon! We’re building a space for DAF holders to connect, learn, and collaborate.</p>
-                    <p class="body-large hero-subtitle" style="opacity: 0.7;" data-content="community_hero_description">
-                        Help us shape it — take a quick survey and tell us what you’d want from a community like this.
+                    <h1 class="huge accent">Community</h1>
+                    <p class="body-large hero-subtitle">
+                        The gathering space for our DAF community. Here, we share what we are writing, where to find DAF Commons community members in the wild.
                     </p>
-                </div>
-                <div class="cta-card scroll-animate" style="max-width: 640px; margin-top: clamp(32px, 5vw, 48px);">
-                    <h3 class="medium" data-content="home_cta_survey_heading">If you have a DAF or are DAF curious, take our survey</h3>
-                    <p class="body form-intro" data-content="home_cta_survey_intro">We want to know:</p>
-                    <ul class="clean-list">
-                        <li data-content="home_cta_survey_item_1">How you’re using it</li>
-                        <li data-content="home_cta_survey_item_2">What’s confusing</li>
-                        <li data-content="home_cta_survey_item_3">What’s possible</li>
-                        <li data-content="home_cta_survey_item_4">What you’re interested in learning</li>
-                    </ul>
-                    <a href="https://forms.gle/JgSMCAXpyBrmsxG1A" target="_blank" class="button btn-secondary">Take the Survey</a>
+                    <div class="hero-jump-row">
+                        <a href="#stories" class="hero-jump">Stories</a>
+                        <span class="hero-jump-sep">·</span>
+                        <a href="#in-the-wild" class="hero-jump">Events</a>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- SECTION 01 — STORIES -->
+        <section id="stories" class="community-section">
+            <div class="container">
+                <div class="section-head scroll-animate">
+                    <div class="eyebrow-line"><span class="eyebrow-num">01</span><span class="eyebrow-dot">·</span> Stories</div>
+                    <h2 class="large">DAF holders<br><em>in the wild.</em></h2>
+                    <p class="body-large section-sub">Stories from DAF Commoners about their journey with their DAF.</p>
+                </div>
+
+                <div class="event-list" id="storyList"></div>
+
+                <p class="story-subscribe-prompt scroll-animate">
+                    Want more? <a href="https://dafcommons.substack.com/" target="_blank" rel="noopener">Subscribe on Substack →</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 02 — IN THE WILD -->
+        <section id="in-the-wild" class="community-section community-section-warm">
+            <div class="container">
+                <div class="section-head scroll-animate">
+                    <div class="eyebrow-line"><span class="eyebrow-num">02</span><span class="eyebrow-dot">·</span> Events</div>
+                    <h2 class="large">Where to find us,<br><em>and each other.</em></h2>
+                    <p class="body-large section-sub">Find DAF Commons and other DAF holders at events across the world.</p>
+                </div>
+
+                <div class="event-list" id="eventList"></div>
+
+                <p class="event-host-prompt scroll-animate">
+                    Hosting something we should be at? <a href="mailto:DAFCommons@gmail.com?subject=Event%20suggestion">Tell us →</a>
+                </p>
+            </div>
+        </section>
+
     </div>
 </Base>

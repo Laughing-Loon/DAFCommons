@@ -118,10 +118,65 @@ Pages & sections in use: home (hero, problem_intro, problem, solution, features,
 | status | text | no |
 | created_at | timestamptz | no |
 
-### Other tables (not yet fully integrated)
-- `community_events` — Future community events
+### `community_events` — Events list on Community page
+| Column | Type | Required | Notes |
+|--------|------|----------|-------|
+| id | uuid | YES | PK |
+| title | text | YES | |
+| description | text | no | |
+| event_date | timestamptz | no | Start datetime (used to derive month/day/dow) |
+| end_date | timestamptz | no | Optional end for multi-day events (e.g., "May 26–29") |
+| location | text | no | Displayed as `event-where` |
+| time_label | text | no | Human label like "6:00 PM" or "Full day" |
+| registration_url | text | no | |
+| cta_label | text | no | "RSVP", "See event", etc. (default 'RSVP') |
+| status | text | no | `open` / `invite` / `closed` (drives pill color) |
+| display_order | integer | no | Sort order |
+| featured | boolean | no | |
+| event_type | text | no | (legacy, unused) |
+| capacity | integer | no | (legacy, unused) |
+| created_at, updated_at | timestamptz | no | |
+
+### `substack_posts` — Stories list on Community page
+| Column | Type | Required | Notes |
+|--------|------|----------|-------|
+| id | uuid | YES | PK |
+| title | text | YES | |
+| excerpt | text | no | |
+| author | text | no | |
+| read_time | text | no | "4 min read" or "Drafting" |
+| eyebrow | text | no | Label shown in status pill: "Featured", "Field note", "Coming soon" |
+| status | text | YES | `open` / `invite` / `closed` (CHECK constraint) |
+| url | text | no | Substack link |
+| published_at | date | no | |
+| display_order | integer | no | Sort order |
+| created_at, updated_at | timestamptz | no | |
+
+### `research_initiatives` — "What else are we working on" on Home
+| Column | Type | Required | Notes |
+|--------|------|----------|-------|
+| id | uuid | YES | PK |
+| title | text | YES | |
+| phase | text | no | "Phase: Collecting responses" |
+| body | text | no | Description copy |
+| status | text | YES | `open` / `invite` / `closed` (CHECK constraint) |
+| status_label | text | YES | "Active", "In design" |
+| cta_link | text | no | |
+| cta_label | text | no | "Take the survey →" |
+| display_order | integer | no | Sort order |
+| created_at, updated_at | timestamptz | no | |
+
+### Other tables (not yet wired)
 - `user_submissions` — User-submitted content
 - `whatsapp_groups` — Community WhatsApp group links
+
+### How dynamic lists are rendered
+`public/scripts/dynamic-lists.js` runs on every page after `supabase.js` initializes the client. It looks for empty containers with these IDs and renders rows fetched from Supabase:
+- `#eventList` → `community_events`
+- `#storyList` → `substack_posts`
+- `#researchList` → `research_initiatives`
+
+There is no hardcoded fallback data in the `.astro` files. If Supabase is unreachable the section renders empty.
 
 ## Design System
 

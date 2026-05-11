@@ -2672,6 +2672,17 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     margin-bottom: clamp(32px, 5vw, 48px);
 }
 
+/* Zero/error state when a dynamic list has no rows */
+.event-list-empty {
+    padding: clamp(36px, 6vw, 64px) clamp(8px, 1.5vw, 16px);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    font-size: clamp(15px, 1.4vw, 18px);
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.5;
+}
+
 .event-row {
     display: grid;
     grid-template-columns: 120px 1fr auto;

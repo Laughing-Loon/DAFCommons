@@ -76,22 +76,39 @@
     }
 
     async function fetchTable(name) {
-        const { data, error } = await supabaseClient
-            .from(name)
-            .select('*')
-            .order('display_order', { ascending: true });
-        if (error) {
-            console.error(`[dynamic-lists] ${name} fetch error`, error);
-            return [];
+        try {
+            const { data, error } = await supabaseClient
+                .from(name)
+                .select('*')
+                .order('display_order', { ascending: true });
+            if (error) throw error;
+            return { rows: data || [], error: null };
+        } catch (err) {
+            console.error(`[dynamic-lists] ${name} fetch error`, err);
+            return { rows: [], error: err };
         }
-        return data || [];
     }
 
-    function renderEvents(rows) {
+    // Empty / error state shown when a list has zero rows (or fetch failed).
+    function renderEmpty(container, message) {
+        const placeholder = el('div', { class: 'event-list-empty', text: message });
+        container.appendChild(placeholder);
+    }
+
+    const EMPTY_COPY = {
+        events:   'No upcoming events on the calendar — check back soon.',
+        stories:  'More field notes coming soon.',
+        research: 'No active research right now.',
+    };
+    const ERROR_COPY = "Couldn't load — please refresh.";
+
+    function renderEvents(result) {
         const container = document.getElementById('eventList');
         if (!container) return;
         container.innerHTML = '';
-        rows.forEach(row => {
+        if (result.error) { renderEmpty(container, ERROR_COPY); return; }
+        if (result.rows.length === 0) { renderEmpty(container, EMPTY_COPY.events); return; }
+        result.rows.forEach(row => {
             const { month, day, dow } = formatEventDate(row.event_date, row.end_date);
             const wrapper = el('div', { class: `event-row scroll-animate event-${row.status}` });
 
@@ -117,11 +134,13 @@
         });
     }
 
-    function renderStories(rows) {
+    function renderStories(result) {
         const container = document.getElementById('storyList');
         if (!container) return;
         container.innerHTML = '';
-        rows.forEach(row => {
+        if (result.error) { renderEmpty(container, ERROR_COPY); return; }
+        if (result.rows.length === 0) { renderEmpty(container, EMPTY_COPY.stories); return; }
+        result.rows.forEach(row => {
             const wrapper = el('div', { class: `event-row event-row-no-date scroll-animate event-${row.status}` });
 
             const body = el('div', { class: 'event-body' });
@@ -140,11 +159,13 @@
         });
     }
 
-    function renderResearch(rows) {
+    function renderResearch(result) {
         const container = document.getElementById('researchList');
         if (!container) return;
         container.innerHTML = '';
-        rows.forEach(row => {
+        if (result.error) { renderEmpty(container, ERROR_COPY); return; }
+        if (result.rows.length === 0) { renderEmpty(container, EMPTY_COPY.research); return; }
+        result.rows.forEach(row => {
             const wrapper = el('div', { class: `event-row event-row-no-date scroll-animate event-${row.status}` });
 
             const body = el('div', { class: 'event-body' });
@@ -183,10 +204,11 @@
         const wantResearch = !!document.getElementById('researchList');
         if (!wantEvents && !wantStories && !wantResearch) return;
 
+        const empty = { rows: [], error: null };
         const [events, stories, research] = await Promise.all([
-            wantEvents ? fetchTable('community_events') : Promise.resolve([]),
-            wantStories ? fetchTable('substack_posts') : Promise.resolve([]),
-            wantResearch ? fetchTable('research_initiatives') : Promise.resolve([]),
+            wantEvents ? fetchTable('community_events') : Promise.resolve(empty),
+            wantStories ? fetchTable('substack_posts') : Promise.resolve(empty),
+            wantResearch ? fetchTable('research_initiatives') : Promise.resolve(empty),
         ]);
 
         if (wantEvents) renderEvents(events);

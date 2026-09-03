@@ -14,10 +14,28 @@ import Base from '../layouts/Base.astro';
                         The gathering space for our DAF community. Here, we share what we are writing, where to find DAF Commons community members in the wild.
                     </p>
                     <div class="hero-jump-row">
+                        <a href="#membership" class="hero-jump">Membership</a>
+                        <span class="hero-jump-sep">·</span>
                         <a href="#stories" class="hero-jump">Stories</a>
                         <span class="hero-jump-sep">·</span>
                         <a href="#in-the-wild" class="hero-jump">Events</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMBERSHIP CTA -->
+        <section id="membership" class="community-membership">
+            <div class="container">
+                <div class="membership-card scroll-animate">
+                    <div class="eyebrow-line">Membership</div>
+                    <h2 class="large membership-heading">Our doors<br><em>open this fall.</em></h2>
+                    <p class="body-large membership-body">We are launching our DAF Commons membership this fall. If you’re a DAF holder looking to learn with others, share your email below and we’ll notify you when we open our doors.</p>
+                    <form class="membership-form" id="membershipSignupForm">
+                        <input type="email" name="email" placeholder="Your email" aria-label="Your email address" required>
+                        <button type="submit">Notify me</button>
+                    </form>
+                    <div id="membershipMessage" class="message"></div>
                 </div>
             </div>
         </section>

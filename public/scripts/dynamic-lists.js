@@ -107,8 +107,14 @@
         if (!container) return;
         container.innerHTML = '';
         if (result.error) { renderEmpty(container, ERROR_COPY); return; }
-        if (result.rows.length === 0) { renderEmpty(container, EMPTY_COPY.events); return; }
-        result.rows.forEach(row => {
+        // Hide events once a day has passed since they ended (or started, if no end_date).
+        const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+        const upcoming = result.rows.filter(row => {
+            const last = row.end_date || row.event_date;
+            return !last || new Date(last).getTime() >= cutoff;
+        });
+        if (upcoming.length === 0) { renderEmpty(container, EMPTY_COPY.events); return; }
+        upcoming.forEach(row => {
             const { month, day, dow } = formatEventDate(row.event_date, row.end_date);
             const wrapper = el('div', { class: `event-row scroll-animate event-${row.status}` });
 

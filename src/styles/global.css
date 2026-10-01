@@ -3158,6 +3158,11 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     }
 }
 
+/* Every.org donate button (About → Contribute) */
+.donate-btn {
+    width: auto;
+}
+
 /* ===== UTILITY ===== */
 .mt-large { margin-top: clamp(48px, 8vw, 96px); }
 .mb-large { margin-bottom: clamp(48px, 8vw, 96px); }

@@ -1,6 +1,5 @@
 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="120" height="120" rx="24" fill="#F5F3F0"/>
-    <circle cx="60" cy="60" r="8" fill="#C2632A"/>
     <circle cx="60" cy="20" r="6" fill="#0A0A0A"/>
     <circle cx="95" cy="40" r="6" fill="#0A0A0A"/>
     <circle cx="95" cy="80" r="6" fill="#0A0A0A"/>
@@ -13,4 +12,5 @@
     <line x1="60" y1="60" x2="60" y2="100" stroke="#0A0A0A" stroke-width="2"/>
     <line x1="60" y1="60" x2="25" y2="80" stroke="#0A0A0A" stroke-width="2"/>
     <line x1="60" y1="60" x2="25" y2="40" stroke="#0A0A0A" stroke-width="2"/>
+    <circle cx="60" cy="60" r="8" fill="#C2632A"/>
 </svg>

@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Meet Bill — DAF Commons">
+    <div class="page meet-bill-page">
+
+        <!-- HERO -->
+        <section class="community-hero">
+            <div class="container">
+                <div class="hero-content scroll-animate">
+                    <h1 class="huge accent" data-content="meet_bill_heading">Meet Bill</h1>
+                    <p class="body-large hero-subtitle" data-content="meet_bill_intro">Bill is a DAF dollar. Follow his journey from a December contribution to years spent sitting invested, and see what it takes to move the money.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO -->
+        <section class="meet-bill-video-section">
+            <div class="container">
+                <div class="meet-bill-video-wrap scroll-animate">
+                    <video class="meet-bill-video" controls playsinline preload="metadata" poster="/videos/meet-bill-poster.jpg">
+                        <source src="/videos/meet-bill.mp4" type="video/mp4">
+                        <a href="/videos/meet-bill.mp4">Watch The DAF Dollar Journey</a>
+                    </video>
+                </div>
+                <p class="footer-daf-prompt meet-bill-next">
+                    <span data-content="meet_bill_next">Don’t let your DAF dollar be like Bill.</span>
+                    <a href="/education">Explore the Education Hub →</a>
+                </p>
+            </div>
+        </section>
+
+    </div>
+</Base>

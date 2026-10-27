@@ -3219,6 +3219,13 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
 
 .involved-actions .button {
     width: auto;
+    padding: clamp(10px, 1.4vw, 12px) clamp(18px, 2.4vw, 24px);
+    font-size: clamp(12px, 1.1vw, 14px);
+    letter-spacing: 0.08em;
+}
+
+.involved-actions .btn-outline {
+    border-width: 1.5px;
 }
 
 .involved-deadline {
@@ -3451,10 +3458,6 @@ body:has(.eir-dialog[open]) {
         height: 100%;
         max-height: 100%;
         border-radius: 0;
-    }
-
-    .involved-actions .button {
-        width: 100%;
     }
 }
 

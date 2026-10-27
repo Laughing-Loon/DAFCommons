@@ -81,3 +81,42 @@ document.getElementById('footerSignupForm')?.addEventListener('submit', async fu
         submitButton.textContent = 'Subscribe';
     }
 });
+
+// Community page — DAF Commons membership waitlist
+document.getElementById('membershipSignupForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const emailInput = form.querySelector('input[name="email"]');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const messageDiv = document.getElementById('membershipMessage');
+    const email = emailInput.value.trim();
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Adding...';
+
+    try {
+        const { error } = await supabaseClient
+            .from('daf_commoners')
+            .insert([{ email: email, source: 'community_membership_cta', status: 'waitlist' }]);
+
+        if (error) {
+            if (error.code === '23505') {
+                messageDiv.className = 'message success';
+                messageDiv.textContent = "You're already on the list — we'll be in touch when we open our doors.";
+            } else throw error;
+        } else {
+            messageDiv.className = 'message success';
+            messageDiv.textContent = "You're on the list! We'll email you when membership opens.";
+            form.reset();
+        }
+        messageDiv.style.display = 'block';
+    } catch (error) {
+        console.error('Membership signup error:', error);
+        messageDiv.className = 'message error';
+        messageDiv.textContent = 'Something went wrong. Please try again.';
+        messageDiv.style.display = 'block';
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Notify me';
+    }
+});

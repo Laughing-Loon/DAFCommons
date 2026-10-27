@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="A bubbling witch's cauldron">
+  <rect width="160" height="160" fill="#F5F3F0"/>
+  <!-- steam -->
+  <path d="M62 44c-6-8 6-12 0-20" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <path d="M82 40c-6-8 6-12 0-20" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <path d="M102 44c-6-8 6-12 0-20" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <!-- flames -->
+  <path d="M58 140c-6-8 2-14 4-20 4 6 10 12 4 20z" fill="#C2632A"/>
+  <path d="M76 142c-7-10 3-17 5-24 5 7 11 15 4 24z" fill="#C2632A"/>
+  <path d="M96 140c-6-8 2-14 4-20 4 6 10 12 4 20z" fill="#C2632A"/>
+  <!-- legs -->
+  <rect x="46" y="118" width="8" height="18" rx="3" fill="#0A0A0A"/>
+  <rect x="106" y="118" width="8" height="18" rx="3" fill="#0A0A0A"/>
+  <!-- pot -->
+  <path d="M34 72h92c0 34-18 54-46 54S34 106 34 72z" fill="#0A0A0A"/>
+  <!-- brew -->
+  <ellipse cx="80" cy="70" rx="48" ry="10" fill="#C2632A"/>
+  <!-- rim -->
+  <rect x="28" y="64" width="104" height="10" rx="5" fill="#0A0A0A"/>
+  <ellipse cx="80" cy="66" rx="44" ry="5" fill="#C2632A"/>
+  <!-- bubbles -->
+  <circle cx="66" cy="56" r="6" fill="#C2632A"/>
+  <circle cx="90" cy="52" r="8" fill="#C2632A"/>
+  <circle cx="104" cy="58" r="4" fill="#C2632A"/>
+  <circle cx="88" cy="50" r="2.5" fill="#F5F3F0" opacity="0.7"/>
+  <!-- sheen -->
+  <path d="M46 84c2 14 8 24 16 30" fill="none" stroke="#F5F3F0" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
+</svg>

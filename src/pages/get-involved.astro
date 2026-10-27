@@ -5,6 +5,7 @@ const eirs = [
     {
         name: 'Katherine Katcher',
         project: 'Thriving Communities Fund',
+        tagline: 'Patient capital for community ownership and land.',
         building: 'The Thriving Communities Fund (TCF) provides patient capital for community ownership and land. We’re a multi-donor donor-advised fund. We make mostly 0% loans and recoverable grants to community organizations that are acquiring real estate and place-based businesses, so people can build ownership and stewardship and thrive in place. TCF grew out of a simple observation. Hundreds of billions of dollars sit in DAFs, while community land trusts, resident-owned communities, and other ownership models struggle to find flexible capital on terms that fit. TCF bridges that gap, and it invites donors into a peer community rather than a transaction.',
         bring: 'Roughly 25 years of social justice experience spanning direct service, legal advocacy, policy and capital strategy.',
         why: 'I believe DAFs can be much more than a parking place for philanthropic dollars. They can be shared, community-centered infrastructure for moving capital where it’s needed most. I’m excited to learn alongside fellow builders who are reimagining what DAFs can do, and to strengthen TCF through that exchange. I also want to help grow a field where more donors put their capital to work for community ownership and for the goals communities actually have.',
@@ -12,6 +13,7 @@ const eirs = [
     {
         name: 'Mairi Jane',
         project: 'Women’s investing cohort',
+        tagline: 'A pooled DAF where women learn innovative finance by investing together.',
         building: 'A pooled DAF where women learn innovative finance by doing it together. Each cohort starts with a shared curriculum that busts the investing jargon. Then we invest real money in companies, using whatever deal structure fits each company’s mission. That might be revenue-sharing, or a structured exit that lets founders buy back ownership instead of selling to the highest bidder. I have two goals. The first is confidence: women control more and more wealth, but most investment education wasn’t designed with us in mind. The second is proof: every deal adds to the track record showing these tools work. People made this financial system up. We can make it better.',
         bring: 'I’ve watched brilliant companies take the wrong capital and drift from their mission. I started as a professor of economics and finance, with a PhD in natural resources focused on ecological economics, and I ran my business school’s sustainability center. I then became Techstars’ first Director of ESG. Since then I’ve been on the leadership team of a climate startup and studied innovative finance at Oxford. I’ve also been a fellow at the Innovative Finance Initiative and serve on a climate justice fund’s investment committee.',
         why: 'To pressure-test this model alongside peers doing inspiring work in the DAF space. If you’re a woman who might join a cohort, I’d love to hear what would make learning by investing together worth your time and money.',
@@ -19,6 +21,7 @@ const eirs = [
     {
         name: 'Wendy Weiden',
         project: 'Willowseed',
+        tagline: 'Putting DAF dollars to work for Bay Area small businesses.',
         building: 'In the Bay Area, billions of dollars chase the next high-risk startup. Meanwhile, the small business owners who make our neighborhoods worth living in struggle to raise modest amounts of capital. I’m building ways to put DAF dollars to work for them. I’m piloting forgivable, low-interest loans to restaurateurs who meet impact criteria we set together. The first is Ilna, a California-Lebanese restaurant that is deeply personal to its founder, Maz. I’m also developing a multi-donor lending vehicle for a local small-business nonprofit. Because DAF dollars are already given away, donors can put impact ahead of return.',
         bring: 'I came to this work through food. After a master’s in sustainable public policy focused on food systems, I worked on strategy and fundraising for local food businesses and social enterprises. An early nonprofit loan fund didn’t get off the ground, but it led me deep into philanthropy. I earned the Chartered Advisor in Philanthropy designation, served on boards and co-founded the Collective Climate Justice Fund, a multi-donor DAF. Asking how to get more of my peers giving led me to Willowseed, my giving coaching practice. Giving is a muscle: the more you use it, the more rewarding it gets.',
         why: 'This work is hard to do alone. Community keeps me going and challenges my thinking, and I can’t wait to learn from and grow with my peers.',
@@ -26,6 +29,7 @@ const eirs = [
     {
         name: 'Jessy Kate',
         project: 'Land Commons Fund',
+        tagline: 'Financing land into commons stewardship, off the speculative market.',
         building: 'The Land Commons Fund finances land purchases so the land can go into commons-oriented stewardship and come off the speculative market. The Fund is a standalone charity holding DAFs, and it works like a multi-donor alternative to a REIT, with DAF contributors acting a bit like LPs. We lend and grant rather than taking equity, and we can co-invest alongside non-charitable lenders. We can also take on subordinate loans and higher-risk deals when that’s strategic. We back novel holding structures, such as new types of land trusts, nature easements, purpose trusts and land back arrangements. By taking on much of the analysis and risk ourselves, we aim to create a predictable product for values-aligned capital outside the stock market.',
         bring: 'I’ve spent two decades building community-led real estate and land stewardship projects. Over that time I’ve also designed governance for collaborative, multi-stakeholder arrangements, with a focus on entity structuring and for-purpose governance. I also work on space policy and international frameworks for governing shared resources, including the Moon. I’m currently qualifying as a solicitor in England and Wales.',
         why: 'To work through open questions such as: How do we finance properties that funders also use? Where has this been tried before? What does diligence cost, and what does the financial model look like?',
@@ -80,18 +84,43 @@ const initials = (name: string) => name.split(' ').map(part => part[0]).join('')
                     </div>
                 </div>
 
-                <div class="eir-list" id="eir-cohort">
+                <div class="eir-grid" id="eir-cohort">
                     {eirs.map((eir, i) => {
                         const n = i + 1;
                         return (
-                            <article class="eir-card scroll-animate">
-                                <div class="eir-profile">
-                                    <div class="eir-photo-wrap">
-                                        <span class="eir-initials" aria-hidden="true">{initials(eir.name)}</span>
-                                        <img class="eir-photo" data-src={`involved_eir_${n}_photo`} src="" alt={eir.name}>
-                                    </div>
+                            <button type="button" class="eir-card scroll-animate" data-eir-open={`eir-dialog-${n}`} aria-haspopup="dialog">
+                                <div class="eir-photo-wrap">
+                                    <span class="eir-initials" aria-hidden="true">{initials(eir.name)}</span>
+                                    <img class="eir-photo" data-src={`involved_eir_${n}_photo`} src="" alt="">
+                                </div>
+                                <div class="eir-card-text">
                                     <h3 class="eir-name" data-content={`involved_eir_${n}_name`}>{eir.name}</h3>
                                     <div class="team-role" data-content={`involved_eir_${n}_project`}>{eir.project}</div>
+                                    <p class="eir-tagline" data-content={`involved_eir_${n}_tagline`}>{eir.tagline}</p>
+                                    <span class="eir-more" data-content="involved_eir_more_label">Read more</span>
+                                </div>
+                            </button>
+                        );
+                    })}
+                </div>
+
+                {eirs.map((eir, i) => {
+                    const n = i + 1;
+                    return (
+                        <dialog class="eir-dialog" id={`eir-dialog-${n}`} aria-labelledby={`eir-dialog-${n}-name`}>
+                            <div class="eir-dialog-inner">
+                                <button type="button" class="eir-dialog-close" data-eir-close aria-label="Close">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+                                </button>
+                                <div class="eir-dialog-head">
+                                    <div class="eir-photo-wrap">
+                                        <span class="eir-initials" aria-hidden="true">{initials(eir.name)}</span>
+                                        <img class="eir-photo" data-src={`involved_eir_${n}_photo`} src="" alt="">
+                                    </div>
+                                    <div>
+                                        <h3 class="eir-name" id={`eir-dialog-${n}-name`} data-content={`involved_eir_${n}_name`}>{eir.name}</h3>
+                                        <div class="team-role" data-content={`involved_eir_${n}_project`}>{eir.project}</div>
+                                    </div>
                                 </div>
                                 <div class="eir-details">
                                     <div class="eir-detail">
@@ -107,11 +136,25 @@ const initials = (name: string) => name.split(' ').map(part => part[0]).join('')
                                         <p data-content={`involved_eir_${n}_why`}>{eir.why}</p>
                                     </div>
                                 </div>
-                            </article>
-                        );
-                    })}
-                </div>
+                            </div>
+                        </dialog>
+                    );
+                })}
             </div>
         </section>
     </div>
+    <script is:inline>
+        document.querySelectorAll('[data-eir-open]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById(this.dataset.eirOpen)?.showModal();
+            });
+        });
+        document.querySelectorAll('.eir-dialog').forEach(dialog => {
+            dialog.querySelector('[data-eir-close]')?.addEventListener('click', () => dialog.close());
+            // Close when clicking the backdrop (outside the inner panel)
+            dialog.addEventListener('click', e => {
+                if (e.target === dialog) dialog.close();
+            });
+        });
+    </script>
 </Base>

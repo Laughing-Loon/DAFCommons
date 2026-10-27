@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+
+const eirs = [
+    {
+        name: 'Katherine Katcher',
+        project: 'Thriving Communities Fund',
+        building: 'The Thriving Communities Fund (TCF) provides patient capital for community ownership and land. We’re a multi-donor donor-advised fund. We make mostly 0% loans and recoverable grants to community organizations that are acquiring real estate and place-based businesses, so people can build ownership and stewardship and thrive in place. TCF grew out of a simple observation. Hundreds of billions of dollars sit in DAFs, while community land trusts, resident-owned communities, and other ownership models struggle to find flexible capital on terms that fit. TCF bridges that gap, and it invites donors into a peer community rather than a transaction.',
+        bring: 'Roughly 25 years of social justice experience spanning direct service, legal advocacy, policy and capital strategy.',
+        why: 'I believe DAFs can be much more than a parking place for philanthropic dollars. They can be shared, community-centered infrastructure for moving capital where it’s needed most. I’m excited to learn alongside fellow builders who are reimagining what DAFs can do, and to strengthen TCF through that exchange. I also want to help grow a field where more donors put their capital to work for community ownership and for the goals communities actually have.',
+    },
+    {
+        name: 'Mairi Jane',
+        project: 'Women’s investing cohort',
+        building: 'A pooled DAF where women learn innovative finance by doing it together. Each cohort starts with a shared curriculum that busts the investing jargon. Then we invest real money in companies, using whatever deal structure fits each company’s mission. That might be revenue-sharing, or a structured exit that lets founders buy back ownership instead of selling to the highest bidder. I have two goals. The first is confidence: women control more and more wealth, but most investment education wasn’t designed with us in mind. The second is proof: every deal adds to the track record showing these tools work. People made this financial system up. We can make it better.',
+        bring: 'I’ve watched brilliant companies take the wrong capital and drift from their mission. I started as a professor of economics and finance, with a PhD in natural resources focused on ecological economics, and I ran my business school’s sustainability center. I then became Techstars’ first Director of ESG. Since then I’ve been on the leadership team of a climate startup and studied innovative finance at Oxford. I’ve also been a fellow at the Innovative Finance Initiative and serve on a climate justice fund’s investment committee.',
+        why: 'To pressure-test this model alongside peers doing inspiring work in the DAF space. If you’re a woman who might join a cohort, I’d love to hear what would make learning by investing together worth your time and money.',
+    },
+    {
+        name: 'Wendy Weiden',
+        project: 'Willowseed',
+        building: 'In the Bay Area, billions of dollars chase the next high-risk startup. Meanwhile, the small business owners who make our neighborhoods worth living in struggle to raise modest amounts of capital. I’m building ways to put DAF dollars to work for them. I’m piloting forgivable, low-interest loans to restaurateurs who meet impact criteria we set together. The first is Ilna, a California-Lebanese restaurant that is deeply personal to its founder, Maz. I’m also developing a multi-donor lending vehicle for a local small-business nonprofit. Because DAF dollars are already given away, donors can put impact ahead of return.',
+        bring: 'I came to this work through food. After a master’s in sustainable public policy focused on food systems, I worked on strategy and fundraising for local food businesses and social enterprises. An early nonprofit loan fund didn’t get off the ground, but it led me deep into philanthropy. I earned the Chartered Advisor in Philanthropy designation, served on boards and co-founded the Collective Climate Justice Fund, a multi-donor DAF. Asking how to get more of my peers giving led me to Willowseed, my giving coaching practice. Giving is a muscle: the more you use it, the more rewarding it gets.',
+        why: 'This work is hard to do alone. Community keeps me going and challenges my thinking, and I can’t wait to learn from and grow with my peers.',
+    },
+    {
+        name: 'Jessy Kate',
+        project: 'Land Commons Fund',
+        building: 'The Land Commons Fund finances land purchases so the land can go into commons-oriented stewardship and come off the speculative market. The Fund is a standalone charity holding DAFs, and it works like a multi-donor alternative to a REIT, with DAF contributors acting a bit like LPs. We lend and grant rather than taking equity, and we can co-invest alongside non-charitable lenders. We can also take on subordinate loans and higher-risk deals when that’s strategic. We back novel holding structures, such as new types of land trusts, nature easements, purpose trusts and land back arrangements. By taking on much of the analysis and risk ourselves, we aim to create a predictable product for values-aligned capital outside the stock market.',
+        bring: 'I’ve spent two decades building community-led real estate and land stewardship projects. Over that time I’ve also designed governance for collaborative, multi-stakeholder arrangements, with a focus on entity structuring and for-purpose governance. I also work on space policy and international frameworks for governing shared resources, including the Moon. I’m currently qualifying as a solicitor in England and Wales.',
+        why: 'To work through open questions such as: How do we finance properties that funders also use? Where has this been tried before? What does diligence cost, and what does the financial model look like?',
+    },
+];
+
+const initials = (name: string) => name.split(' ').map(part => part[0]).join('');
+---
+<Base title="Get Involved — DAF Commons">
+    <div class="page page-involved">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content scroll-animate">
+                    <h1 class="huge accent" data-content="involved_hero_heading">Get Involved</h1>
+                    <p class="body-large hero-subtitle" data-content="involved_hero_subtitle">Two ways to build the DAF Commons with us: join our member cohort, or meet the DAF holders building something new as Entrepreneurs in Residence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <!-- Membership -->
+                <div class="involved-block scroll-animate" id="membership">
+                    <div class="about-label" data-content="involved_member_label">DAF Commons Membership</div>
+                    <h2 class="large involved-heading" data-content="involved_member_heading">An invitation to join the inaugural DAF Commons member cohort</h2>
+                    <p class="about-body" data-content="involved_member_body">The DAF Commons is a peer community of DAF holders who want to do more with their DAF dollars, together, today. This year we’re inviting ~50 people to form our inaugural cohort. You’ll join us for a roughly six-month founding pilot, starting January 2027, that transitions into ongoing membership. The founding cohort will get support on shifting DAF capital to impact, and help determine how we build the DAF Commons community — how we want to organize, connect, and move from isolated intent to collective action. Broader membership will open later in 2027.</p>
+                    <p class="involved-deadline" data-content="involved_member_deadline">Apply by December 4th.</p>
+                    <div class="involved-actions">
+                        <a class="button btn-primary" data-href="involved_member_apply_url" href="https://docs.google.com/forms/d/1us412DLaS047VyPLlNC4TkrA25zH8q0ipWscX5H34r8/viewform" target="_blank" rel="noopener" data-content="involved_member_apply_label">Apply to join the inaugural cohort</a>
+                        <a class="button btn-outline" data-href="involved_member_learn_url" href="https://docs.google.com/document/d/1eF2tZ7g3sHRWXBm3gcK6wQFoKfqFOkFDBQgP0PDWfW0/edit?tab=t.0" target="_blank" rel="noopener" data-content="involved_member_learn_label">Learn more about what’s on offer</a>
+                    </div>
+                    <p class="involved-questions">
+                        <span data-content="involved_member_questions_1">Questions? Read the</span>
+                        <a data-href="involved_member_faq_url" href="https://docs.google.com/document/d/1eF2tZ7g3sHRWXBm3gcK6wQFoKfqFOkFDBQgP0PDWfW0/edit?tab=t.0" target="_blank" rel="noopener" data-content="involved_member_faq_label">FAQs</a><span data-content="involved_member_questions_2">, join one of our Q&amp;A sessions on November 17 at 3pm ET / 12pm PT or November 23 at 1pm ET / 10am PT, or email</span>
+                        <a href="mailto:dafcommons@gmail.com" data-content="involved_member_contact_email">dafcommons@gmail.com</a>.
+                    </p>
+                </div>
+
+                <!-- Entrepreneurs in Residence -->
+                <div class="involved-block scroll-animate" id="eir">
+                    <div class="about-label" data-content="involved_eir_label">Entrepreneurs in Residence</div>
+                    <h2 class="large involved-heading" data-content="involved_eir_heading">Our Entrepreneurs in Residence</h2>
+                    <p class="about-body" data-content="involved_eir_body">The Entrepreneurs in Residence (EIR) program gives DAF holders the space, community and support to build something new in the world of DAFs. Over eight months, our EIRs will learn from each other, test concepts, and launch new initiatives into the world. We started the program after meeting DAF holders who, frustrated by the system, were building the pooled funds, initiatives, and products they wished had existed, but were mostly doing it alone and isolated. Along the way, we’ll host opportunities for our community to engage with the EIRs and their work directly. Meet our inaugural cohort.</p>
+                    <div class="involved-actions">
+                        <a class="button btn-secondary" href="#eir-cohort" data-content="involved_eir_action_label">Meet the EIRs</a>
+                    </div>
+                </div>
+
+                <div class="eir-list" id="eir-cohort">
+                    {eirs.map((eir, i) => {
+                        const n = i + 1;
+                        return (
+                            <article class="eir-card scroll-animate">
+                                <div class="eir-profile">
+                                    <div class="eir-photo-wrap">
+                                        <span class="eir-initials" aria-hidden="true">{initials(eir.name)}</span>
+                                        <img class="eir-photo" data-src={`involved_eir_${n}_photo`} src="" alt={eir.name}>
+                                    </div>
+                                    <h3 class="eir-name" data-content={`involved_eir_${n}_name`}>{eir.name}</h3>
+                                    <div class="team-role" data-content={`involved_eir_${n}_project`}>{eir.project}</div>
+                                </div>
+                                <div class="eir-details">
+                                    <div class="eir-detail">
+                                        <div class="eir-detail-label" data-content="involved_eir_building_label">What I’m building</div>
+                                        <p data-content={`involved_eir_${n}_building`}>{eir.building}</p>
+                                    </div>
+                                    <div class="eir-detail">
+                                        <div class="eir-detail-label" data-content="involved_eir_bring_label">What I bring</div>
+                                        <p data-content={`involved_eir_${n}_bring`}>{eir.bring}</p>
+                                    </div>
+                                    <div class="eir-detail">
+                                        <div class="eir-detail-label" data-content="involved_eir_why_label">Why I’m here</div>
+                                        <p data-content={`involved_eir_${n}_why`}>{eir.why}</p>
+                                    </div>
+                                </div>
+                            </article>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    </div>
+</Base>

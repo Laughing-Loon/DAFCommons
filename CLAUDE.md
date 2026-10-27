@@ -20,6 +20,7 @@ src/
     education.astro   # Education Hub (searchable resource library)
     directory.astro   # Stakeholder Directory (searchable org cards)
     community.astro   # Community page (coming soon)
+    get-involved.astro # Get Involved (member cohort + Entrepreneurs in Residence)
     about.astro       # About page (team, FAQ, collaborators)
   components/
     Nav.astro         # Global navigation bar
@@ -76,7 +77,7 @@ Example:
 | display_order | integer | no | Sort order |
 | updated_at | timestamptz | no | Auto-updated |
 
-Pages & sections in use: home (hero, problem_intro, problem, solution, features, cta), about (hero, who, what, faq, team, collaborators, contact), education (hero, search, filters, no_results, footer), directory (hero, search, filters, no_results, footer), community (hero), global (nav, footer, meta)
+Pages & sections in use: home (hero, problem_intro, problem, solution, features, cta), about (hero, who, what, faq, team, collaborators, contact), education (hero, search, filters, no_results, footer), directory (hero, search, filters, no_results, footer), community (hero), get_involved (hero, membership, eir, eir_cohort), global (nav, footer, meta)
 
 ### `education_resources` — Education Hub resource library
 | Column | Type | Required | Notes |

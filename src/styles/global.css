@@ -2508,10 +2508,6 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     font-weight: 800;
 }
 
-.eyebrow-dot {
-    color: rgba(194, 99, 42, 0.5);
-}
-
 .hero-jump-row {
     display: flex;
     flex-wrap: wrap;

@@ -3203,6 +3203,7 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
 .involved-block {
     max-width: 900px;
     margin-bottom: clamp(64px, 10vw, 120px);
+    scroll-margin-top: 160px;
 }
 
 .involved-block .section-head {
@@ -3247,6 +3248,14 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
 
 .involved-questions a:hover {
     opacity: 0.7;
+}
+
+.eir-grid-heading {
+    margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.page-involved #eir {
+    margin-bottom: clamp(40px, 6vw, 64px);
 }
 
 .eir-grid {

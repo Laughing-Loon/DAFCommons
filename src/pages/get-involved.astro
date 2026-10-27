@@ -45,6 +45,11 @@ const initials = (name: string) => name.split(' ').map(part => part[0]).join('')
                 <div class="hero-content scroll-animate">
                     <h1 class="huge accent" data-content="involved_hero_heading">Get Involved</h1>
                     <p class="body-large hero-subtitle" data-content="involved_hero_subtitle">Two ways to build the DAF Commons with us: join our member cohort, or meet the DAF holders building something new as Entrepreneurs in Residence.</p>
+                    <div class="hero-jump-row">
+                        <a href="#membership" class="hero-jump">Member Cohort</a>
+                        <span class="hero-jump-sep">·</span>
+                        <a href="#eir" class="hero-jump">Entrepreneurs in Residence</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,11 +84,9 @@ const initials = (name: string) => name.split(' ').map(part => part[0]).join('')
                         <p class="body-large section-sub" data-content="involved_eir_sub">Meet the inaugural cohort building something new in the world of DAFs</p>
                     </div>
                     <p class="about-body" data-content="involved_eir_body">The Entrepreneurs in Residence (EIR) program gives DAF holders the space, community and support to build something new in the world of DAFs. Over eight months, our EIRs will learn from each other, test concepts, and launch new initiatives into the world. We started the program after meeting DAF holders who, frustrated by the system, were building the pooled funds, initiatives, and products they wished had existed, but were mostly doing it alone and isolated. Along the way, we’ll host opportunities for our community to engage with the EIRs and their work directly. Meet our inaugural cohort.</p>
-                    <div class="involved-actions">
-                        <a class="button btn-secondary" href="#eir-cohort" data-content="involved_eir_action_label">Meet the EIRs</a>
-                    </div>
                 </div>
 
+                <h3 class="medium eir-grid-heading scroll-animate" data-content="involved_eir_action_label">Meet the EIRs</h3>
                 <div class="eir-grid" id="eir-cohort">
                     {eirs.map((eir, i) => {
                         const n = i + 1;

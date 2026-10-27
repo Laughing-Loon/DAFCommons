@@ -3195,12 +3195,9 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
 }
 
 /* ===== GET INVOLVED PAGE ===== */
-.page-involved .hero {
-    padding-bottom: clamp(24px, 4vw, 48px);
-}
-
+/* Hero uses .community-hero; content starts directly below it, as on Community */
 .page-involved .section {
-    padding-top: clamp(24px, 4vw, 48px);
+    padding-top: 0;
 }
 
 .involved-block {

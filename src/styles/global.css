@@ -2543,6 +2543,12 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     position: relative;
 }
 
+/* First section sits directly under the hero, matching Get Involved spacing */
+.community-page .community-hero + .community-section {
+    padding-top: 0;
+    scroll-margin-top: 160px;
+}
+
 .community-section-warm {
     background: #EDE8E2;
 }

@@ -3212,7 +3212,7 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     margin-bottom: clamp(64px, 10vw, 120px);
 }
 
-.involved-heading {
+.involved-block .section-head {
     margin-bottom: clamp(24px, 4vw, 40px);
 }
 

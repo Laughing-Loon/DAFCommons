@@ -17,10 +17,9 @@ DAF Commons (www.dafcommons.com) is a community platform for Donor Advised Fund 
 src/
   pages/           # Astro page routes
     index.astro       # Home page
-    education.astro   # Education Hub (searchable resource library)
+    education.astro   # "Learn what’s possible" (nav: Learn): Stories, What is a DAF link, Education Hub
     directory.astro   # Stakeholder Directory (searchable org cards)
-    community.astro   # Community page (coming soon)
-    get-involved.astro # Get Involved (member cohort + Entrepreneurs in Residence)
+    get-involved.astro # Get Involved (member cohort, EIRs, events, DAFluencer plug); /community redirects here via vercel.json
     about.astro       # About page (team, FAQ, collaborators)
   components/
     Nav.astro         # Global navigation bar
@@ -77,7 +76,7 @@ Example:
 | display_order | integer | no | Sort order |
 | updated_at | timestamptz | no | Auto-updated |
 
-Pages & sections in use: home (hero, problem_intro, problem, solution, features, cta), about (hero, who, what, faq, team, collaborators, contact), education (hero, search, filters, no_results, footer), directory (hero, search, filters, no_results, footer), community (hero), get_involved (hero, membership, eir, eir_cohort), global (nav, footer, meta)
+Pages & sections in use: home (hero, problem_intro, problem, solution, features, cta), about (hero, who, what, faq, team, collaborators, contact), education (hero, stories, basics, hub, search, filters, no_results, footer), directory (hero, search, filters, no_results, footer), get_involved (hero, membership, eir, eir_cohort, events, dafluencer), global (nav, footer, meta)
 
 ### `education_resources` — Education Hub resource library
 | Column | Type | Required | Notes |
@@ -119,7 +118,7 @@ Pages & sections in use: home (hero, problem_intro, problem, solution, features,
 | status | text | no |
 | created_at | timestamptz | no |
 
-### `community_events` — Events list on Community page
+### `community_events` — Events list on Get Involved page
 | Column | Type | Required | Notes |
 |--------|------|----------|-------|
 | id | uuid | YES | PK |
@@ -238,4 +237,4 @@ There is no hardcoded fallback data in the `.astro` files. If Supabase is unreac
 2. When updating existing text: update BOTH the HTML fallback AND the Supabase row to keep them identical
 3. The JS files in `public/scripts/` contain fallback data arrays (RESOURCES_FALLBACK, etc.) — these are used if Supabase fetch fails. Keep them reasonably in sync but they don't need to be exact.
 4. All CSS is in one file (`global.css`). New styles go before the `/* ===== UTILITY ===== */` section at the bottom.
-5. Page-specific CSS classes: `.page-tight-hero` (education/directory), `.page-about` (about page)
+5. Page-specific CSS classes: `.page-tight-hero` (directory), `.community-page` (shared hero/section styles, used by Learn), `.page-about` (about page)

@@ -1,22 +1,67 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.astro';
+// Stories: rendered client-side from Supabase by /scripts/dynamic-lists.js
 ---
-<Base title="Education Hub — DAF Commons">
-    <div class="page page-tight-hero">
-        <section class="hero">
+<Base title="Learn What’s Possible — DAF Commons">
+    <div class="page community-page page-learn">
+
+        <!-- HERO -->
+        <section class="community-hero">
             <div class="container">
                 <div class="hero-content scroll-animate">
-                    <h1 class="huge accent" data-content="education_hero_heading">Education Hub</h1>
-                    <p class="body-large hero-subtitle" data-content="education_hero_subtitle">
-                        Want to dive deeper and learn more? We've got you covered. A growing library of collective intelligence. Articles, talks, and papers on the DAF landscape by practitioners and peers. 
-                    </p>
-                    <p class="body-large education-daf-prompt">Don't know what a DAF is? <a href="/what-is-a-daf">Start here →</a></p>
+                    <h1 class="huge accent" data-content="learn_hero_heading">Learn what’s possible</h1>
+                    <p class="body-large hero-subtitle" data-content="learn_hero_subtitle">Get inspired by fellow DAF holders, brush up on the basics, and dig into a growing library of resources on what your DAF can do.</p>
+                    <div class="hero-jump-row">
+                        <a href="#stories" class="hero-jump">Stories</a>
+                        <span class="hero-jump-sep">·</span>
+                        <a href="#basics" class="hero-jump">What is a DAF?</a>
+                        <span class="hero-jump-sep">·</span>
+                        <a href="#hub" class="hero-jump">Education Hub</a>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="section">
+
+        <!-- SECTION 01 — STORIES -->
+        <section id="stories" class="community-section">
             <div class="container">
+                <div class="section-head scroll-animate">
+                    <div class="eyebrow-line"><span class="eyebrow-num">01</span><span data-content="learn_stories_label">Get inspired</span></div>
+                    <h2 class="large">DAF holders<br><em>in the wild.</em></h2>
+                    <p class="body-large section-sub" data-content="learn_stories_sub">Stories from DAF Commoners about their journey with their DAF.</p>
+                </div>
+
+                <div class="event-list" id="storyList"></div>
+
+                <p class="story-subscribe-prompt scroll-animate">
+                    Want more? <a href="https://dafcommons.substack.com/" target="_blank" rel="noopener">Subscribe on Substack →</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 02 — WHAT IS A DAF -->
+        <section id="basics" class="community-section community-section-warm">
+            <div class="container">
+                <div class="section-head learn-basics scroll-animate">
+                    <div class="eyebrow-line"><span class="eyebrow-num">02</span><span data-content="learn_basics_label">The basics</span></div>
+                    <h2 class="large" data-content="learn_basics_heading">What is a DAF?</h2>
+                    <p class="body-large section-sub" data-content="learn_basics_sub">New to donor advised funds? Start with a plain-language guide to how DAFs work and what they make possible.</p>
+                    <div class="learn-actions">
+                        <a href="/what-is-a-daf" class="button btn-primary" data-content="learn_basics_cta">Start here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 03 — EDUCATION HUB -->
+        <section id="hub" class="community-section">
+            <div class="container">
+                <div class="section-head scroll-animate">
+                    <div class="eyebrow-line"><span class="eyebrow-num">03</span><span data-content="learn_hub_label">Go deeper</span></div>
+                    <h2 class="large" data-content="education_hero_heading">Education Hub</h2>
+                    <p class="body-large section-sub" data-content="education_hero_subtitle">Want to dive deeper and learn more? We've got you covered. A growing library of collective intelligence. Articles, talks, and papers on the DAF landscape by practitioners and peers. </p>
+                </div>
                 <SearchBar
                     id="educationSearchInput"
                     placeholder="Search resources by keyword..."
@@ -39,6 +84,7 @@ import SearchBar from '../components/SearchBar.astro';
                 </div>
             </div>
         </section>
+
     </div>
     <script is:inline src="/scripts/education.js"></script>
 </Base>

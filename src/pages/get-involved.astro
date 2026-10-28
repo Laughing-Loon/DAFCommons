@@ -44,11 +44,15 @@ const initials = (name: string) => name.split(' ').map(part => part[0]).join('')
             <div class="container">
                 <div class="hero-content scroll-animate">
                     <h1 class="huge accent" data-content="involved_hero_heading">Get Involved</h1>
-                    <p class="body-large hero-subtitle" data-content="involved_hero_subtitle">Two ways to build the DAF Commons with us: join our member cohort, or meet the DAF holders building something new as Entrepreneurs in Residence.</p>
+                    <p class="body-large hero-subtitle" data-content="involved_hero_subtitle">Ways to build the DAF Commons with us: join our member cohort, meet our Entrepreneurs in Residence, find us at events, or share your own DAF story.</p>
                     <div class="hero-jump-row">
                         <a href="#membership" class="hero-jump">Member Cohort</a>
                         <span class="hero-jump-sep">·</span>
                         <a href="#eir" class="hero-jump">Entrepreneurs in Residence</a>
+                        <span class="hero-jump-sep">·</span>
+                        <a href="#events" class="hero-jump">Events</a>
+                        <span class="hero-jump-sep">·</span>
+                        <a href="#dafluencer" class="hero-jump">Be a DAFluencer</a>
                     </div>
                 </div>
             </div>
@@ -143,6 +147,32 @@ const initials = (name: string) => name.split(' ').map(part => part[0]).join('')
                         </dialog>
                     );
                 })}
+
+                <!-- Events -->
+                <div class="involved-block involved-events" id="events">
+                    <div class="section-head scroll-animate">
+                        <div class="eyebrow-line"><span class="eyebrow-num">03</span><span data-content="involved_events_label">Events</span></div>
+                        <h2 class="large" data-content="involved_events_heading">Find us in person</h2>
+                        <p class="body-large section-sub" data-content="involved_events_sub">Find DAF Commons and other DAF holders at events across the world.</p>
+                    </div>
+                    <div class="event-list" id="eventList"></div>
+                    <p class="event-host-prompt scroll-animate">
+                        Hosting something we should be at? <a href="mailto:DAFCommons@gmail.com?subject=Event%20suggestion" class="copy-email-link">Tell us →</a>
+                    </p>
+                </div>
+
+                <!-- DAFluencer -->
+                <div class="involved-block scroll-animate" id="dafluencer">
+                    <div class="section-head">
+                        <div class="eyebrow-line"><span class="eyebrow-num">04</span><span data-content="involved_dafluencer_label">Share your story</span></div>
+                        <h2 class="large" data-content="involved_dafluencer_heading">Be a DAFluencer</h2>
+                        <p class="body-large section-sub" data-content="involved_dafluencer_sub">Doing something interesting with your DAF? Inspire other DAF holders by sharing your journey in DAF holders in the wild.</p>
+                    </div>
+                    <div class="involved-actions">
+                        <a href="/education#stories" class="button btn-primary" data-content="involved_dafluencer_read">Read the stories</a>
+                        <a href="mailto:DAFCommons@gmail.com?subject=My%20DAF%20story" class="button btn-outline" data-content="involved_dafluencer_pitch">Pitch your story</a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

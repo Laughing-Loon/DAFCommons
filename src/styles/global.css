@@ -3293,6 +3293,7 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(20px, 3vw, 28px);
     scroll-margin-top: 120px;
+    margin-bottom: clamp(64px, 10vw, 120px);
 }
 
 .eir-card {

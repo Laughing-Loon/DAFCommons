@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/community", "destination": "/get-involved", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",

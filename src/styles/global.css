@@ -2508,10 +2508,6 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     font-weight: 800;
 }
 
-.eyebrow-dot {
-    color: rgba(194, 99, 42, 0.5);
-}
-
 .hero-jump-row {
     display: flex;
     flex-wrap: wrap;
@@ -2545,6 +2541,12 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
 .community-section {
     padding: clamp(80px, 12vw, 140px) 0;
     position: relative;
+}
+
+/* First section sits directly under the hero, matching Get Involved spacing */
+.community-page .community-hero + .community-section {
+    padding-top: 0;
+    scroll-margin-top: 160px;
 }
 
 .community-section-warm {
@@ -3196,6 +3198,291 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
 
 .footer-donate a {
     display: block;
+}
+
+/* ===== GET INVOLVED PAGE ===== */
+/* Hero uses .community-hero; content starts directly below it, as on Community */
+.page-involved .section {
+    padding-top: 0;
+}
+
+.involved-block {
+    max-width: 900px;
+    margin-bottom: clamp(64px, 10vw, 120px);
+    scroll-margin-top: 160px;
+}
+
+.involved-block .section-head {
+    margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.involved-actions,
+.learn-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(12px, 2vw, 16px);
+    margin-top: clamp(32px, 5vw, 48px);
+}
+
+.involved-actions .button,
+.learn-actions .button {
+    width: auto;
+    padding: clamp(10px, 1.4vw, 12px) clamp(18px, 2.4vw, 24px);
+    font-size: clamp(12px, 1.1vw, 14px);
+    letter-spacing: 0.08em;
+}
+
+.involved-actions .btn-outline,
+.learn-actions .btn-outline {
+    border-width: 1.5px;
+}
+
+/* Events block reuses the Community event list */
+.involved-events {
+    max-width: none;
+}
+
+.involved-events .section-head {
+    max-width: 900px;
+}
+
+/* Learn page: the basics card has no content below its header */
+.learn-basics {
+    margin-bottom: 0;
+}
+
+.involved-deadline {
+    font-size: clamp(15px, 1.4vw, 19px);
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: clamp(24px, 4vw, 32px);
+}
+
+.involved-deadline + .involved-actions {
+    margin-top: clamp(16px, 2.5vw, 20px);
+}
+
+.involved-questions {
+    font-size: clamp(15px, 1.4vw, 19px);
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-top: clamp(24px, 4vw, 32px);
+}
+
+.involved-questions a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.involved-questions a:hover {
+    opacity: 0.7;
+}
+
+.eir-grid-heading {
+    margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.page-involved #eir {
+    margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.eir-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 28px);
+    scroll-margin-top: 120px;
+    margin-bottom: clamp(64px, 10vw, 120px);
+}
+
+.eir-card {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(20px, 3vw, 28px);
+    width: 100%;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: clamp(24px, 4vw, 40px);
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.eir-card:hover {
+    transform: translateY(-4px);
+}
+
+.eir-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.eir-card .eir-photo-wrap {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.eir-tagline {
+    font-size: clamp(15px, 1.4vw, 19px);
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.eir-more {
+    display: inline-block;
+    margin-top: clamp(12px, 2vw, 16px);
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+}
+
+.eir-more::after {
+    content: " →";
+}
+
+.eir-dialog {
+    width: min(760px, calc(100% - 32px));
+    max-height: calc(100vh - 64px);
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: var(--text);
+}
+
+.eir-dialog::backdrop {
+    background: rgba(10, 10, 10, 0.5);
+}
+
+body:has(.eir-dialog[open]) {
+    overflow: hidden;
+}
+
+.eir-dialog-inner {
+    position: relative;
+    padding: clamp(28px, 5vw, 56px);
+}
+
+.eir-dialog-close {
+    position: absolute;
+    top: clamp(12px, 2vw, 20px);
+    right: clamp(12px, 2vw, 20px);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.eir-dialog-close:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.eir-dialog-close svg {
+    width: 18px;
+    height: 18px;
+}
+
+.eir-dialog-head {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 28px);
+    margin-bottom: clamp(24px, 4vw, 36px);
+    padding-right: 48px;
+}
+
+.eir-dialog-head .eir-photo-wrap {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.eir-photo-wrap {
+    position: relative;
+    width: clamp(96px, 12vw, 140px);
+    height: clamp(96px, 12vw, 140px);
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+.eir-initials {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    opacity: 0.35;
+}
+
+.eir-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eir-photo[src=""] {
+    display: none;
+}
+
+.eir-name {
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.eir-details {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 28px);
+}
+
+.eir-detail-label {
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: clamp(6px, 1vw, 10px);
+}
+
+.eir-detail p {
+    font-size: clamp(15px, 1.4vw, 19px);
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .eir-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eir-dialog {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
 }
 
 /* ===== UTILITY ===== */

@@ -3364,6 +3364,27 @@ body.daf-chapter .hero-b  { opacity: 0; animation: daf-fu 0.9s 0.65s cubic-bezie
     transition: transform 0.3s ease;
 }
 
+/* Align name / project / tagline / Read more across cards in the same row:
+   each card spans 4 rows of the parent grid and shares its row tracks (subgrid),
+   so a two-line name or longer tagline pushes the matching line down in every card. */
+@supports (grid-template-rows: subgrid) {
+    .eir-card {
+        display: grid;
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+        row-gap: 0;
+        align-content: start;
+    }
+
+    .eir-card-text {
+        display: contents;
+    }
+
+    .eir-more {
+        align-self: start;
+    }
+}
+
 .eir-card:hover {
     transform: translateY(-4px);
 }

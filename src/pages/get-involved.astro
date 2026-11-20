@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 
+// Shareable per-EIR link: /get-involved#katherine-katcher opens that EIR's pop-out
+const slugify = (name) => name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 const eirs = [
     {
         name: 'Katherine Katcher',
@@ -116,10 +119,18 @@ const eirs = [
                     })}
                 </div>
 
+                <!-- What's a multi-donor DAF? -->
+                <aside class="mdf-callout scroll-animate">
+                    <div class="mdf-callout-label" data-content="involved_mdf_label">New to the term?</div>
+                    <h3 class="mdf-callout-heading" data-content="involved_mdf_heading">What’s a multi-donor DAF?</h3>
+                    <p class="mdf-callout-body" data-content="involved_mdf_body">A multi-donor DAF (MDF) is a shared fund where DAF holders pool capital to give and invest together, around a shared focus like an issue, a place, or an approach.</p>
+                    <a class="mdf-callout-link" data-href="involved_mdf_url" href="/guides/multi-donor-daf-field-guide.pdf" target="_blank" rel="noopener" data-content="involved_mdf_link_label">Read the one-page field guide</a>
+                </aside>
+
                 {eirs.map((eir, i) => {
                     const n = i + 1;
                     return (
-                        <dialog class="eir-dialog" id={`eir-dialog-${n}`} aria-labelledby={`eir-dialog-${n}-name`}>
+                        <dialog class="eir-dialog" id={`eir-dialog-${n}`} data-eir-slug={slugify(eir.name)} aria-labelledby={`eir-dialog-${n}-name`}>
                             <div class="eir-dialog-inner">
                                 <button type="button" class="eir-dialog-close" data-eir-close aria-label="Close">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
@@ -178,9 +189,29 @@ const eirs = [
         </section>
     </div>
     <script is:inline>
+        // Each EIR pop-out has a shareable link (#their-name). Opening a pop-out puts
+        // it in the address bar; closing clears it. replaceState keeps the back button
+        // behaving as if the pop-out were never opened.
+        const clearHash = () => history.replaceState(null, '', location.pathname + location.search);
+
+        function openEir(dialog) {
+            if (!dialog || dialog.open) return;
+            dialog.showModal();
+            history.replaceState(null, '', '#' + dialog.dataset.eirSlug);
+        }
+
+        function openFromHash() {
+            const slug = decodeURIComponent(location.hash.slice(1));
+            if (!slug) return;
+            const dialog = document.querySelector(`.eir-dialog[data-eir-slug="${CSS.escape(slug)}"]`);
+            if (!dialog) return;
+            document.getElementById('eir-cohort')?.scrollIntoView({ block: 'start' });
+            openEir(dialog);
+        }
+
         document.querySelectorAll('[data-eir-open]').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.getElementById(this.dataset.eirOpen)?.showModal();
+                openEir(document.getElementById(this.dataset.eirOpen));
             });
         });
         document.querySelectorAll('.eir-dialog').forEach(dialog => {
@@ -189,6 +220,13 @@ const eirs = [
             dialog.addEventListener('click', e => {
                 if (e.target === dialog) dialog.close();
             });
+            // Fires for every close path: X button, backdrop click, Esc key
+            dialog.addEventListener('close', () => {
+                if (location.hash === '#' + dialog.dataset.eirSlug) clearHash();
+            });
         });
+
+        window.addEventListener('hashchange', openFromHash);
+        openFromHash();
     </script>
 </Base>
